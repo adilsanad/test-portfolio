@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <section className='grid grid-cols-16 gap-y-24 pt-11 w-full bg-linear-to-b from-[#151515] to-[#101010]'>
+    <section className='grid grid-cols-12 gap-y-24 pt-11 w-full bg-linear-to-b from-[#151515] to-[#101010]'>
       <Navbar/>
       <Hero/>
       <WorkGallery/>

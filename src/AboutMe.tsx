@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutMe = () => {
     return (
-        <section className="col-span-full grid grid-cols-14 col-start-2 col-end-16 gap-9 text-white font-neulisneue">
+        <section className="col-span-full grid grid-cols-10 col-start-2 col-end-11 gap-9 text-white font-neulisneue">
             <div className="col-span-full flex gap-4">
                 <p>who i am</p>
                 <img></img>

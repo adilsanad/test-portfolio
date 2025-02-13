@@ -1,69 +1,115 @@
-import React from "react";
-interface GalleryCardProps {
-    org: string;
-    title: string;
-    tags: string[];
-    year: string;
-    description: string;
-    classname?: string;
+import { useEffect, useRef, useState } from "react";
+import GalleryCard from "./GalleryCard";
+
+interface GalleryData {
+  org: string;
+  title: string;
+  tags: string[];
+  year: string;
+  description: string;
+  image: string;
 }
 
-const GalleryCard: React.FC<GalleryCardProps> = ({ org, title, tags, year, description, classname }) => (
-    <div className={`flex flex-col gap-3 rounded-[15px] border p-10 ${classname}`}>
-        <div className="flex justify-between">
-            <h3>{org}</h3>
-            <h3>{year}</h3>
-        </div>
-        <div className="flex flex-col gap-5 pt-9 border-t border-white">
-            <div className="flex flex-col gap-3">
-                <h1 className="text-4xl">{title}</h1>
-                <div className="flex gap-2">
-                    {tags.map((tag, index) => (
-                        <div key={index} className="p-2 rounded-[10px] border">{tag}</div>
-                    ))}
-                </div>
-            </div>
-            <p>{description}</p>
-        </div>
-    </div>
-);
-
-
 function WorkGallery() {
-    return (
-        <section className="col-span-full col-start-2 col-end-16 grid-cols-14 max-h-screen overflow-y-clip font-neulisneue">
-            <div className="col-span-6 flex w-full pb-48 gap-5">
-                <div className="flex w-2/5 flex-col gap-8 text-white">
-                    <GalleryCard
-                        org="AnswersAi"
-                        title="Webapp Revamp"
-                        tags={['UX + UI', 'React + Tailwind', 'Shipped']}
-                        year="2024"
-                        description="A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy."
-                    />
-                    <GalleryCard
-                        classname="rotate-4 -ml-8 mr-8"
-                        org="AnswersAi"
-                        title="Webapp Revamp"
-                        tags={['UX + UI', 'React + Tailwind', 'Shipped']}
-                        year="2024"
-                        description="A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy."
-                    />
-                    <GalleryCard
-                        classname="rotate-8 -ml-24 mr-24"
-                        org="AnswersAi"
-                        title="Webapp Revamp"
-                        tags={['UX + UI', 'React + Tailwind', 'Shipped']}
-                        year="2024"
-                        description="A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy."
-                    />
-                </div>
-                <div className="w-3/5 flex border border-white rounded-[20px]">
-                    <img></img>
-                </div>
+  const galleryCardData: GalleryData[] = [
+    {
+      org: "AnswersAi",
+      title: "Webapp Revamp",
+      tags: ["UX + UI", "React + Tailwind", "Shipped"],
+      year: "2024",
+      description:
+        "A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy.",
+      image: "/images/answers-ai-1.png",
+    },
+    {
+      org: "AnswersAi",
+      title: "Website Refresh",
+      tags: ["UX + UI", "React + Tailwind", "Shipped"],
+      year: "2024",
+      description:
+        "A brand new marketing site revamp, focusing on modern design principles and better performance.",
+      image: "/images/answers-ai-2.png",
+    },
+    {
+      org: "AnswersAi",
+      title: "Another Project",
+      tags: ["UX + UI", "React + Tailwind", "Shipped"],
+      year: "2024",
+      description:
+        "Another webapp project revamp, focusing on enhancing user experience and aesthetics.",
+      image: "/images/answers-ai-3.png",
+    },
+    {
+        org: "AnswersAi",
+        title: "Another Project",
+        tags: ["UX + UI", "React + Tailwind", "Shipped"],
+        year: "2024",
+        description:
+          "Another webapp project revamp, focusing on enhancing user experience and aesthetics.",
+        image: "/images/answers-ai-3.png",
+      },
+      {
+        org: "AnswersAi",
+        title: "Another Project",
+        tags: ["UX + UI", "React + Tailwind", "Shipped"],
+        year: "2024",
+        description:
+          "Another webapp project revamp, focusing on enhancing user experience and aesthetics.",
+        image: "/images/answers-ai-3.png",
+      },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const listRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (listRef.current && cardRefs.current[activeIndex]) {
+      const listContainer = listRef.current;
+      const activeCard = cardRefs.current[activeIndex];
+
+      // Scroll so the active card moves to the top
+      listContainer.scrollTo({
+        top: activeCard.offsetTop - listContainer.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  }, [activeIndex]);
+
+  return (
+    <section className="col-span-10 col-start-2 grid grid-cols-2 gap-5 max-h-screen font-neulisneue text-white ">
+      {/* Left Column: Scrollable List of Cards */}
+      <div ref={listRef} className="flex flex-col gap-4 h-[80vh] p-4 overflow-y-auto overflow-x-hidden custom-scrollbar">
+        {galleryCardData.map((card, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <div key={index} ref={(el) => (cardRefs.current[index] = el)}>
+              <GalleryCard
+                org={card.org}
+                title={card.title}
+                tags={card.tags}
+                year={card.year}
+                description={card.description}
+                image={card.image}
+                isActive={isActive}
+                onClick={() => setActiveIndex(index)}
+                classname={isActive ? "scale-101 border-blue-500 bg-blue-800/20 snap-always" : "snap-mandatory"}
+              />
             </div>
-        </section>
-    );
+          );
+        })}
+      </div>
+
+      {/* Right Column: Image of Active Card */}
+      <div className="flex mt-1 p-4 items-center justify-center border border-white rounded-[20px]">
+        <img
+          src={galleryCardData[activeIndex].image}
+          alt={galleryCardData[activeIndex].title}
+          className="max-w-full max-h-[80vh] object-contain"
+        />
+      </div>
+    </section>
+  );
 }
 
 export default WorkGallery;

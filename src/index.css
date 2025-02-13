@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
-@theme{
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme {
   --font-neulissans: "Neulis Sans", "sans-serif";
   --font-neulisneue: "Neulis Neue", "sans-serif";
   --font-neuliscursive: "Neulis Cursive", "sans-serif";
