@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+.root{
+  background-color: #1A1A1A;
+}
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
     display: none;
