@@ -28,7 +28,7 @@ const AppRoutes = () => {
   };
 
   return (
-    <Router>
+    <Router basename="/test-portfolio/">
       <ScrollToTop />
       <Layout>
         <Routes>
