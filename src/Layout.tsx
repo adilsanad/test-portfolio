@@ -3,7 +3,7 @@ import pageendmarker from './assets/pageender.svg'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="grid grid-cols-8 md:grid-cols-16 w-full bg-[#151515]">
+    <div className="grid grid-cols-8 md:grid-cols-16 w-full bg-[#0B0B0B]">
       <main className="col-span-full">{children}</main>
       <div className="col-span-full flex justify-center items-center gap-4 py-32">
         <svg className="hover:rotate-180 transition-all" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -97,16 +97,16 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <p>A case study I conducted independently, Cyclo was my attempt at creating an online presence for a physical product-based brand. My goal with this study was to explore design principles, branding and visual design.</p>
                         <div className="flex max-md:flex-col max-md:gap-5 justify-between">
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Role</h3>
-                                <p>Product Engineer</p>
+                                <h3 className="font-bold text-[#4F78FF]">Role</h3>
+                                <p>Product Designer</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Tools</h3>
-                                <p>Figma, Adobe CC</p>
+                                <h3 className="font-bold text-[#4F78FF]">Tools</h3>
+                                <p>Figma, Miro, <br/> Adobe CC</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Areas of Study</h3>
-                                <p>Design, Branding</p>
+                                <h3 className="font-bold text-[#4F78FF]">Areas of Study</h3>
+                                <p>Visual Design, IA & Hierarchy, <br/> User Research</p>
                             </div>
                         </div>
                     </div>
@@ -132,39 +132,39 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">01</h2>
-                            <div className="flex gap-4 ">
-                                <h1 className="text-[2em] text-white">Research</h1>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <HashLink to="#research" smooth className="flex gap-4 cursor-pointer">
+                                <h1 className="text-[2em] text-white hover:text-white/70 transition-all">Research</h1>
+                                <svg className="hover:opacity-70 transition-all" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g opacity="0.6">
                                         <path d="M15.4422 0H10.4223C10.1142 0 9.86448 0.249717 9.86448 0.557758C9.86448 0.865799 10.1142 1.11552 10.4223 1.11552H14.0957L3.89237 11.3185L4.68118 12.1073L14.8845 1.90431V5.57758C14.8845 5.88562 15.1341 6.13534 15.4422 6.13534C15.7502 6.13534 16 5.88562 16 5.57758V0.557758C16 0.249716 15.7502 0 15.4422 0Z" fill="white" />
                                         <path d="M1.11554 5.4026C1.11554 4.47847 1.86471 3.72933 2.78886 3.72933H6.69325V2.61381H2.78886C1.24862 2.61381 0 3.8624 0 5.4026V13.2112C0 14.7514 1.24862 16 2.78886 16H10.5977C12.1379 16 13.3865 14.7514 13.3865 13.2112V9.3069H12.271V13.2112C12.271 14.1353 11.5218 14.8845 10.5977 14.8845H2.78886C1.86471 14.8845 1.11554 14.1353 1.11554 13.2112V5.4026Z" fill="white" />
                                     </g>
                                 </svg>
-                            </div>
+                            </HashLink>
                         </div>
                         <p className="w-full">Research highlighted a strong demand for bike customization options, comprehensive support and service solutions, and flexible payment options.</p>
                     </div>
                     <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">02</h2>
-                            <div className="flex gap-4 ">
-                                <h1 className="text-[2em] text-white">Wireframing</h1>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <HashLink to="#wireframing" smooth className="flex gap-4 cursor-pointer">
+                                <h1 className="text-[2em] text-white hover:text-white/70 transition-all">Wireframing</h1>
+                                <svg className="hover:opacity-70 transition-all" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g opacity="0.6">
                                         <path d="M15.4422 0H10.4223C10.1142 0 9.86448 0.249717 9.86448 0.557758C9.86448 0.865799 10.1142 1.11552 10.4223 1.11552H14.0957L3.89237 11.3185L4.68118 12.1073L14.8845 1.90431V5.57758C14.8845 5.88562 15.1341 6.13534 15.4422 6.13534C15.7502 6.13534 16 5.88562 16 5.57758V0.557758C16 0.249716 15.7502 0 15.4422 0Z" fill="white" />
                                         <path d="M1.11554 5.4026C1.11554 4.47847 1.86471 3.72933 2.78886 3.72933H6.69325V2.61381H2.78886C1.24862 2.61381 0 3.8624 0 5.4026V13.2112C0 14.7514 1.24862 16 2.78886 16H10.5977C12.1379 16 13.3865 14.7514 13.3865 13.2112V9.3069H12.271V13.2112C12.271 14.1353 11.5218 14.8845 10.5977 14.8845H2.78886C1.86471 14.8845 1.11554 14.1353 1.11554 13.2112V5.4026Z" fill="white" />
                                     </g>
                                 </svg>
-                            </div>
+                            </HashLink>
                         </div>
                         <p className="w-full">The wireframes focused on accessibility, intuitive navigation, and simplifying the shopping progression.</p>
                     </div>
                     <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">03</h2>
-                            <HashLink to="#research" smooth className="flex gap-4 cursor-pointer ">
-                                <h1 className="text-[2em] text-white">Final Screens</h1>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <HashLink to="#finalscreens" smooth className="flex gap-4 cursor-pointer">
+                                <h1 className="text-[2em] text-white hover:text-white/70 transition-all">Final Screens</h1>
+                                <svg className="hover:opacity-70 transition-all" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g opacity="0.6">
                                         <path d="M15.4422 0H10.4223C10.1142 0 9.86448 0.249717 9.86448 0.557758C9.86448 0.865799 10.1142 1.11552 10.4223 1.11552H14.0957L3.89237 11.3185L4.68118 12.1073L14.8845 1.90431V5.57758C14.8845 5.88562 15.1341 6.13534 15.4422 6.13534C15.7502 6.13534 16 5.88562 16 5.57758V0.557758C16 0.249716 15.7502 0 15.4422 0Z" fill="white" />
                                         <path d="M1.11554 5.4026C1.11554 4.47847 1.86471 3.72933 2.78886 3.72933H6.69325V2.61381H2.78886C1.24862 2.61381 0 3.8624 0 5.4026V13.2112C0 14.7514 1.24862 16 2.78886 16H10.5977C12.1379 16 13.3865 14.7514 13.3865 13.2112V9.3069H12.271V13.2112C12.271 14.1353 11.5218 14.8845 10.5977 14.8845H2.78886C1.86471 14.8845 1.11554 14.1353 1.11554 13.2112V5.4026Z" fill="white" />
@@ -181,7 +181,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                 <p>To represent the research I’ve conducted, I created the two following user personas, These user personas highlight the pain points faced by users with other platforms and their desired goals from a competitor.</p>
             </div>
             <PersonaScroll isMobile={isMobile} personas={personaData} />
-            <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
+            <div id="wireframing" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
                 <h1 className="font-bold text-[2em]">Wireframing</h1>
                 <p>Based off this research and after exploring the current market for a bit, I had a basic idea for the fundamentals of the webstore experience. I started the design process off with the wireframes of the website. </p>
             </div>
@@ -233,7 +233,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-full flex flex-col ">
+            <div id="finalscreens" className="col-span-full flex flex-col ">
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center max-md:items-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>

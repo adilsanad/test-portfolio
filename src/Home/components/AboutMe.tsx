@@ -42,7 +42,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                     <div className={`${isMobile ? 'pt-16 p-9' : 'pt-20 p-12'} flex flex-col gap-6 bg-[#0e0e0e] w-full h-full rounded-[12px]`}>
                         <h1 className="font-neuliscursive font-bold text-white text-6xl">Hi!</h1>
                         <p>I’m Adil Sanad, a Product Designer based out of Bangalore, India. </p>
-                        <p>I graduated in Computer Science and Engineering at NIT Jalandhar, Punjab. As both a designer and front-end web dev, I am able to coordinate much more closely between both design and dev teams and get into the nitty gritty.</p>
+                        <p>I graduated in Computer Science and Engineering from NIT Jalandhar, Punjab. As a product designer with dev chops, I am able to coordinate much more closely between both design and dev teams. </p>
                     </div>
                 </div>
                 <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 transition-all duration-500`}>
@@ -51,8 +51,8 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                             <h3 className="font-bold text-white max-md:text-xl">Skills</h3>
                             <div className={`flex ${isMobile ? 'gap-2' : 'gap-4 '} items-center`}>
                                 <p>HTML/CSS</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
-                                <p>JS/TS</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
-                                <p>React</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
+                                <p>Typescript</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
+                                <p>ReactJS</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
                                 <p>Tailwind</p>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                             <div className={`flex ${isMobile ? 'gap-2' : 'gap-4 '} items-center`}>
                                 <p>Figma</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
                                 <p>Adobe CC</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
-                                <p>Miro</p>
+                                <p>Miro, Lottie</p>
                             </div>
                         </div>
                     </div>
@@ -75,9 +75,9 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                                 <div className="flex flex-col gap-2">
                                     <div className={`${isMobile ? 'flex-col' : ''} flex w-full justify-between`}>
                                         <h3 className="text-white">KIOXIA Hackcellence Fest '21</h3>
-                                        <p className="text-base opacity-60">Middle East, Africa, South Asia</p>
+                                        <p className="text-base md:text-right opacity-60">MEA, South Asia</p>
                                     </div>
-                                    <p className=" leading-[1.3em]">Designed and prototyped a mobile app to enable users to discover new businesses</p>
+                                    <p className="font-light leading-[1.3em]">Designed and prototyped a mobile app to enable users & businesses to connect directly, tailored to the middle east market.</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 py-6 border-t border-white/10 text-lg">
@@ -87,7 +87,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                                         <h3 className="text-white">HackMol 2.0</h3>
                                         <p className="text-base opacity-60">NITJ, Punjab</p>
                                     </div>
-                                    <p className="font-light leading-[1.3em]">Hackathon organized by NITJ Google Dev Club. Finished 3rd place with a marketplace mobile app. </p>
+                                    <p className="font-light leading-[1.3em]">Hackathon organized by NITJ Google Dev Club. Finished 3rd place with a marketplace website. </p>
                                 </div>
                             </div>
                         </div>

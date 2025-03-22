@@ -11,11 +11,11 @@ function Home({ isMobile }: { isMobile: boolean }) {
     const options = useMemo(() => ({
         fullScreen: { enable: false },
         particles: {
-            number: { value: 30 },
+            number: { value: 10 },
             size: { value: 3 },
             move: { enable: true, speed: 1 },
             opacity: { value: 0.3 },
-            links: { enable: true, color: "#FFFFFF", opacity: 0.3 },
+            links: { enable: false},
             color: { value: "#FFFFFF" },
         },
         interactivity: {

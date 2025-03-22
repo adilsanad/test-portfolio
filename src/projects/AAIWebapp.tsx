@@ -19,30 +19,31 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                     <p>2024 · Shipped</p>
                 </div>
                 <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start' : ''} flex w-full items-center justify-between`}>
+                    <div className={`${isMobile ? 'flex-col gap-4 items-start' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-5xl text-white font-normal tracking-tight">Webapp Overhaul</h1>
                         <div className="flex gap-2">
                             <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
-                            <div className="px-4 py-3 rounded-[5px] border border-[#A55BFF]/30 bg-[#A55BFF]/10 text-[#A55BFF]">Case Study</div>
+                            <div className="px-4 py-3 rounded-[5px] border bg-[#FF6246]/10 border-[#FF6246]/30 text-[#FF6246]">React</div>
+                            <div className="px-4 py-3 rounded-[5px] border bg-[#5BFF8C]/10 border-[#5BFF8C]/30 text-[#5BFF8C]">Shipped</div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-10 text-[#C1C1C1]">
-                    <p>A SaaS project I contributed to as part of the product design team, where I was responsible for designing and developing component systems for the webapp overhaul, in line with the product design system.
+                    <div className="flex flex-col gap-16 text-[#C1C1C1]">
+                        <p>A SaaS project I contributed to as part of the product design team, where I was responsible for designing and developing component systems for the webapp overhaul, in line with the product design system.
                             <br /><br />
                             Additionally, I worked on building the frontend in ReactJS. Through multiple iterations, we cut down on redundant features and consolidated all functionality into a unified UI that was clean, simple and prioritized usability.
                         </p>
                         <div className="flex max-md:flex-col max-md:gap-5 justify-between">
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Role</h3>
+                                <h3 className="font-bold text-[#4F78FF]">Role</h3>
                                 <p>Product Engineer<br />(Design & Dev)</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Tools</h3>
-                                <p>Figma, Adobe CC</p>
+                                <h3 className="font-bold text-[#4F78FF]">Tools</h3>
+                                <p>Figma, Adobe CC, <br /> React + tailwind</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold">Areas of Study</h3>
-                                <p>Design, Branding</p>
+                                <h3 className="font-bold text-[#4F78FF]">Areas of Study</h3>
+                                <p>Design Systems, Web Dev, <br />User Research </p>
                             </div>
                         </div>
                     </div>
@@ -62,7 +63,7 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                     <br /><br />To address these challenges, the overhaul aimed to redesign and develop a scalable component system, following company guidelines and industry standards.
                 </p>
             </div>
-            <div className="col-span-full flex flex-col gap-9 bg-[#181821] md:px-25 max-md:pb-0 py-12 max-md:rounded-[15px]">
+            <div className="col-span-full flex flex-col gap-9 bg-[#181821] md:px-25 max-md:pb-0 py-12 pb-20 max-md:rounded-[15px]">
                 <h1 className="px-7 text-[2em] font-bold text-white/30">design brief</h1>
                 <div className="flex max-md:flex-col gap-12 bg-black/30 rounded-[15px] p-10 md:p-16">
                     <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
@@ -103,7 +104,7 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                             <p className="max-md:text-sm text-lg">
                                 We consolidated all separate features into one UI called ‘Lecture Mode’, and utilized a clean, minimal design with full-screen bento layouts for expanded views.
                                 <br /><br />
-                                Ease of access/usage and functional hierarchy were our priorities, and we used prompts to encourage users to explore all the features available. 
+                                Ease of access/usage and functional hierarchy were our priorities, and we used prompts to encourage users to explore all the features available.
                                 <br /><br />
                                 Overall, the webapp overhaul succeeded in its initial goal of simplifying the user experience and increasing active webapp users.
                                 <br /><br />
@@ -119,9 +120,9 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full rounded-[10px]" src={img4} />
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
-    ) 
+    )
 }
 
 export default AAiWebapp;

@@ -14,6 +14,7 @@ interface GalleryData {
   description: string;
   image: string;
   link: string;
+  livelink?: string;
 }
 
 function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
@@ -21,27 +22,29 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
     {
       org: "AnswersAi",
       title: "Webapp Revamp",
-      tags: ["UX + UI", "React + Tailwind", "Shipped"],
-      year: "2024",
+      tags: ["UX + UI", "React", "Shipped"],
+      year: "2025",
       description:
         "A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy.",
       image: WebappRevampCover,
-      link: '/aai-webapp-revamp'
+      link: '/aai-webapp-revamp',
+      livelink: 'https://answersai.com'
     },
     {
       org: "AnswersAi",
       title: "Website Refresh",
-      tags: ["UX + UI", "React + Tailwind", "Shipped"],
+      tags: ["UX + UI", "React", "Shipped"],
       year: "2024",
       description:
         "A brand new marketing site revamp, focusing on modern design principles and better performance.",
       image: WebsiteRevampCover,
-      link: '/aai-website-refresh                                                                                                                                   '
+      link: '/aai-website-refresh',
+      livelink: 'https://answersai.com'
     },
     {
-      org: "AnswersAi",
+      org: "",
       title: "Cyclo",
-      tags: ["UX + UI", "React + Tailwind", "Freelance"],
+      tags: ["UX + UI", "Case Study"],
       year: "2024",
       description:
         "Another webapp project revamp, focusing on enhancing user experience and aesthetics.",
@@ -92,7 +95,15 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       {/* Left Column: Scrollable List of Cards */}
       <div className={`${isMobile ? '-top-16 right-8' : '-top-24 right-12'} flex gap-4 absolute z-20`}>
         <img className={`${isMobile ? 'order-2 scale-x-[-1] h-16' : 'order-1 h-20'} opacity-80 `} src={RedArrow} />
-        <p className={`${isMobile ? 'order-1 -rotate-4 text-nowrap text-3xl' : 'text-4xl order-2 rotate-4'} font-light font-neuliscursive text-white/30 pt-1`}>work samples</p>
+        <p
+          className={`
+          ${isMobile ? "order-1 -rotate-4 text-nowrap text-3xl" : "text-4xl order-2 rotate-4"} 
+          font-light font-neuliscursive text-white/30 pt-1
+          animate-pulse-white
+        `}
+        >
+          work samples
+        </p>
       </div>
       <div className="relative col-span-full md:col-span-5 md:pt-4">
         <div ref={listRef} className={`${isMobile ? 'col-span-full gap-6' : 'col-span-5 gap-4 h-[80vh] overflow-y-auto overflow-x-hidden custom-scrollbar '} relative flex flex-col`}>
@@ -112,6 +123,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
                   isMobile={isMobile}
                   className={`${!isMobile ? `duration-500 ${isActive ? 'rotate-0' : index % 2 === 0 ? 'rotate-2' : '-rotate-2'}` : ''}`}
                   link={card.link}
+                  livelink={card.livelink}
                 />
               </div>
             );
