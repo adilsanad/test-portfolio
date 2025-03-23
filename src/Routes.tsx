@@ -3,7 +3,7 @@ import Home from "./Home/Home";
 import Layout from "./Layout";
 import Cyclo from "./projects/Cyclo";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { HashRouter, useLocation } from "react-router";
 import AAIWebapp from "./projects/AAIWebapp";
 import AAIWebsite from "./projects/AAIWebsite";
 
@@ -28,7 +28,7 @@ const AppRoutes = () => {
   };
 
   return (
-    <Router basename="/">
+    <HashRouter basename="/">
       <ScrollToTop />
       <Layout>
         <Routes>
@@ -38,7 +38,7 @@ const AppRoutes = () => {
           <Route path="/aai-website-refresh" element={<AAIWebsite isMobile={isMobile}/>}/>
         </Routes>
       </Layout>
-    </Router>
+    </HashRouter>
   );
 };
 
