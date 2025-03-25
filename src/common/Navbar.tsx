@@ -26,7 +26,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                 ? 'bg-white/30 text-black'
                 : 'bg-black/30 text-white/70'
             } 
-            ${isMobile ? isOpen ? 'rounded-none' : 'rounded-[0px_0px_15px_15px]' : 'rounded-[15px] '} items-center font-neulisneue backdrop-blur-xs ${className}`}
+            ${isMobile ? isOpen ? 'rounded-none' : 'rounded-[0px_0px_15px_15px] bg-gradient-to-b from-black/60 to-black/30' : 'rounded-[15px] '} items-center font-neulisneue backdrop-blur-xs ${className}`}
         >
             <div className={`flex ${style === 'pinned' ? 'w-full justify-between p-8' : 'gap-72 pl-8 pr-4 py-4'} items-center `}>
                 <Link to='/'>
@@ -34,7 +34,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                 </Link>
                 {isMobile ? (
                     <div
-                        className="cursor-pointer flex flex-col gap-1.5 w-10 h-8 justify-center items-center"
+                        className="cursor-pointer flex flex-col gap-1.5 w-10 h-8 justify-center items-center opacity-80"
                         onClick={handleClick}
                     >
                         <div
