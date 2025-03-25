@@ -25,7 +25,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                 </div>
             }
             <div className={`${isMobile ? 'col-span-full ' : 'col-span-8 '} flex flex-col gap-6 text-[#A7A7A7] tracking-[0.01em]`}>
-                <div className={`relative flex rounded-[15px] p-[2px] bg-gradient-to-bl from-white/30 to-white/6 rotate-1 hover:rotate-0 transition-all duration-500`}>
+                <div className={`relative flex rounded-[15px] p-[2px] bg-gradient-to-bl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     {isMobile &&
                         <div className="absolute -rotate-2 right-8 -top-28 w-fit h-fit">
                             <img src={me} className="w-42 h-56 object-cover rounded-[20px]">
@@ -45,11 +45,11 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                         <p>I graduated in Computer Science and Engineering from NIT Jalandhar, Punjab. As a product designer with dev chops, I am able to coordinate much more closely between both design and dev teams. </p>
                     </div>
                 </div>
-                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 transition-all duration-500`}>
+                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     <div className={`${isMobile ? 'p-9 gap-6' : 'px-12 py-9 gap-3 '} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] `}>
                         <div className={`flex ${isMobile ? 'flex-col gap-2' : 'gap-8'}  w-full`}>
                             <h3 className="font-bold text-white max-md:text-xl">Skills</h3>
-                            <div className={`flex ${isMobile ? 'gap-2' : 'gap-4 '} items-center`}>
+                            <div className={`flex flex-wrap ${isMobile ? 'gap-2' : 'gap-4 '} items-center`}>
                                 <p>HTML/CSS</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
                                 <p>Typescript</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
                                 <p>ReactJS</p><div className="w-[6px] h-[6px] bg-[#4F78FF] rounded-full" />
@@ -66,7 +66,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                         </div>
                     </div>
                 </div>
-                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 transition-all duration-500`}>
+                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] text-[#A7A7A7}`}>
                         <h3 className="font-bold text-lg text-[#4F78FF]">some stuff I've done</h3>
                         <div className="flex flex-col gap-3">

@@ -45,9 +45,9 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       org: "",
       title: "Cyclo",
       tags: ["UX + UI", "Case Study"],
-      year: "2024",
+      year: "2023",
       description:
-        "Another webapp project revamp, focusing on enhancing user experience and aesthetics.",
+        "A case study I took on to design an online webstore for a premium cycling gear company.",
       image: CycloCover,
       link: '/cyclo'
     },/*

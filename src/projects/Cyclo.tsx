@@ -82,8 +82,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
             </div>*/}
             <div className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
-                    <p>Work // CYCLO</p>
-                    <p>2024 · Case Studies</p>
+                    <p>CYCLO</p>
+                    <p>2023 · Case Studies</p>
                 </div>
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col items-start' : ''} flex w-full items-center justify-between`}>
@@ -102,20 +102,20 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                             </div>
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Tools</h3>
-                                <p>Figma, Miro, <br/> Adobe CC</p>
+                                <p>Figma, Miro, <br className="max-md:hidden"/> Adobe CC</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Areas of Study</h3>
-                                <p>Visual Design, IA & Hierarchy, <br/> User Research</p>
+                                <p>Visual Design, IA & Hierarchy, <br className="max-md:hidden"/> User Research</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="col-span-full flex justify-center gap-6 overflow-hidden">
-                <img className="rounded-[15px]" src={HERO_IMAGE1} />
-                <img className="rounded-[15px]" src={COVER_IMAGE} />
-                <img className="rounded-[15px]" src={HERO_IMAGE2} />
+            <div className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE2} />
             </div>
             <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <p>Cyclo aims to establish an impactful online presence through a straightforward and easy to use webstore experience.
@@ -250,7 +250,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={LANDING_PAGE} />
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -267,7 +267,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={PRODUCT_PAGE} />
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -282,7 +282,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={CATEGORY_PAGE} />
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -296,7 +296,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={CHECKOUT_PAGE3} />
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">

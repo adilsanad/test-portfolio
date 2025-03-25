@@ -16,7 +16,7 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
             <div className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
                     <p>AnswersAi</p>
-                    <p>2024 · Shipped</p>
+                    <p>2025 · Shipped</p>
                 </div>
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col gap-4 items-start' : ''} flex w-full items-center justify-between`}>
@@ -49,10 +49,10 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-full flex justify-center gap-6 overflow-hidden">
-                <img className="rounded-[15px]" src={HERO_IMAGE1} />
-                <img className="rounded-[15px] max-h-[500px]" src={COVER_IMAGE} />
-                <img className="rounded-[15px]" src={HERO_IMAGE2} />
+            <div className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE2} />
             </div>
             <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <div className="flex flex-col gap-5 p-6 md:p-9 border border-[#6268FF] rounded-[10px] bg-[#6268FF]/5">

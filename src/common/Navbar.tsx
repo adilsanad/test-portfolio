@@ -28,7 +28,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
             } 
             ${isMobile ? isOpen ? 'rounded-none' : 'rounded-[0px_0px_15px_15px]' : 'rounded-[15px] '} items-center font-neulisneue backdrop-blur-xs ${className}`}
         >
-            <div className={`flex ${style === 'pinned' ? 'w-full justify-between p-8' : 'gap-72 pl-8 pr-14 py-8'} items-center `}>
+            <div className={`flex ${style === 'pinned' ? 'w-full justify-between p-8' : 'gap-72 pl-8 pr-4 py-4'} items-center `}>
                 <Link to='/'>
                     <img src={ASLOGO}></img>
                 </Link>
@@ -51,19 +51,19 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                         />
                     </div>
                 ) : (
-                    <div className="flex gap-10 items-center text-lg font-light">
-                        <Link className="" to='/'>Home</Link>
-                        <HashLink smooth to="/#work">Work</HashLink>
-                        <HashLink smooth to="/#aboutme">{'About (me)'}</HashLink>
-                        <HashLink smooth to="/#contact">Reach Out!</HashLink>
+                    <div className="flex items-center gap-2 text-lg font-light">
+                        <HashLink className='py-2 p-4' smooth to="/#work">Work</HashLink>
+                        <HashLink className='py-2 p-4' smooth to="/#aboutme">{'About (me)'}</HashLink>
+                        <HashLink className='py-2 p-4' smooth to="/#contact">Reach Out!</HashLink>
+                        <a className="text-[#4F78FF] py-4 p-6 hover:bg-white/5 active:bg-white/5 border border-white/0 hover:border-white/10 active:border-white/10 rounded-[10px] transition-all " href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
                     </div>
                 )}
             </div>
             <div className={`${isOpen ? "h-auto opacity-80 py-8" : "h-0 opacity-0 py-0"} flex w-full p-8 rounded-[0px_0px_15px_15px] justify-between items-center text-base bg-black/40 transition-all duration-200 ease-out overflow-hidden`}>
-                <Link className="" to='/'>Home</Link>
                 <HashLink smooth to="/#work">Work</HashLink>
                 <HashLink smooth to="/#aboutme">{'About (me)'}</HashLink>
                 <HashLink smooth to="/#contact">Reach Out!</HashLink>
+                <a className="text-[#4F78FF]" href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
             </div>
         </nav>
     );

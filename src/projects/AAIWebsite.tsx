@@ -28,7 +28,7 @@ const AAiWebsite = ({ isMobile }: { isMobile: boolean }) => {
 
                 </div>
                 <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start' : ''} flex w-full items-center justify-between`}>
+                    <div className={`${isMobile ? 'flex-col items-start gap-6' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-5xl text-white font-normal tracking-tight">Website Revamp</h1>
                         <div className="flex gap-2">
                             <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
@@ -44,24 +44,20 @@ const AAiWebsite = ({ isMobile }: { isMobile: boolean }) => {
                         <div className="flex max-md:flex-col max-md:gap-5 justify-between">
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Role</h3>
-                                <p>Product Engineer<br />(Design & Dev)</p>
+                                <p>Product Engineer (Design & Dev)</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Tools</h3>
-                                <p>Figma,<br></br> ReactJS + Tailwind</p>
-                            </div>
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-[#4F78FF]">Areas of Study</h3>
-                                <p>Design, Branding</p>
+                                <p>Figma, ReactJS + Tailwind, CSS</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="col-span-full flex justify-center gap-6 overflow-hidden">
-                <img className="rounded-[15px] max-w-[720px]" src={HERO_IMAGE1} />
-                <img className="rounded-[15px] max-w-[720px]" src={COVER_IMAGE} />
-                <img className="rounded-[15px] max-w-[720px]" src={HERO_IMAGE2} />
+            <div className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE2} />
             </div>
             <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <div className="flex flex-col gap-5 p-6 md:p-9 border border-[#6268FF] rounded-[10px] bg-[#6268FF]/5">
@@ -129,7 +125,7 @@ const AAiWebsite = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full rounded-[10px]" src={img1} />
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-12 md:top-16 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -144,7 +140,7 @@ const AAiWebsite = ({ isMobile }: { isMobile: boolean }) => {
 
                     </div>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-12 md:top-16 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
