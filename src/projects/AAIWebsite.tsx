@@ -28,7 +28,7 @@ const AAiWebsite = ({ isMobile }: { isMobile: boolean }) => {
 
                 </div>
                 <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start gap-6' : ''} flex w-full items-center justify-between`}>
+                    <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-5xl text-white font-normal tracking-tight">Website Revamp</h1>
                         <div className="flex gap-2">
                             <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>

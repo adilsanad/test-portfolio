@@ -86,7 +86,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <p>2023 · Case Studies</p>
                 </div>
                 <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start' : ''} flex w-full items-center justify-between`}>
+                    <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-[64px] font-black">CYCLO</h1>
                         <div className="flex gap-2">
                             <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>

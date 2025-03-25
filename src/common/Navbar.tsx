@@ -30,7 +30,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
         >
             <div className={`flex ${style === 'pinned' ? 'w-full justify-between p-8' : 'gap-72 pl-8 pr-4 py-4'} items-center `}>
                 <Link to='/'>
-                    <img src={ASLOGO}></img>
+                    <img className='drop-shadow-[0px_0px_24px_rgba(57,43,255,1)' src={ASLOGO}></img>
                 </Link>
                 {isMobile ? (
                     <div
