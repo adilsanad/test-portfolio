@@ -21,10 +21,10 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col gap-8 items-start' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-5xl text-white font-normal tracking-tight">Webapp Overhaul</h1>
-                        <div className="flex gap-2">
-                            <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
-                            <div className="px-4 py-3 rounded-[5px] border bg-[#FF6246]/10 border-[#FF6246]/30 text-[#FF6246]">React</div>
-                            <div className="px-4 py-3 rounded-[5px] border bg-[#5BFF8C]/10 border-[#5BFF8C]/30 text-[#5BFF8C]">Shipped</div>
+                        <div className="flex gap-3">
+                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
+                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border bg-[#FF6246]/10 border-[#FF6246]/30 text-[#FF6246]">React</div>
+                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border bg-[#5BFF8C]/10 border-[#5BFF8C]/30 text-[#5BFF8C]">Shipped</div>
                         </div>
                     </div>
                     <div className="flex flex-col gap-16 text-[#C1C1C1]">
@@ -97,7 +97,7 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
             </div>
             <div className="col-span-full flex flex-col">
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-12 md:top-16 md:sticky ">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-12 md:top-16 md:sticky">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Finished Pages</h1>

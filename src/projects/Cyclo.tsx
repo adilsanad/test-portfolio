@@ -88,9 +88,9 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-[64px] font-black">CYCLO</h1>
-                        <div className="flex gap-2">
-                            <div className="px-4 py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
-                            <div className="px-4 py-3 rounded-[5px] border border-[#A55BFF]/30 bg-[#A55BFF]/10 text-[#A55BFF]">Case Study</div>
+                        <div className="flex gap-3">
+                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
+                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#A55BFF]/30 bg-[#A55BFF]/10 text-[#A55BFF]">Case Study</div>
                         </div>
                     </div>
                     <div className="flex flex-col gap-10 text-[#C1C1C1]">
@@ -235,7 +235,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
             </div>
             <div id="finalscreens" className="col-span-full flex flex-col ">
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center max-md:items-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl rounded-[30px_30px_0px_0px]">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Landing Pages</h1>
@@ -251,7 +251,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Product Pages</h1>
@@ -268,7 +268,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Category Pages</h1>
@@ -283,7 +283,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Checkout Pages</h1>
@@ -297,7 +297,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-20 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-gradient-to-b from-black to-black/0 via-90% via-black/95">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Support Pages</h1>
