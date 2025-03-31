@@ -52,10 +52,10 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                     </div>
                 ) : (
                     <div className="flex items-center gap-2 text-lg font-light">
-                        <HashLink className='py-2 p-4' smooth to="/#work">Work</HashLink>
-                        <HashLink className='py-2 p-4' smooth to="/#aboutme">{'About (me)'}</HashLink>
-                        <HashLink className='py-2 p-4' smooth to="/#contact">Reach Out!</HashLink>
-                        <a className="text-[#4F78FF] py-4 p-6 hover:bg-white/5 active:bg-white/5 border border-white/0 hover:border-white/10 active:border-white/10 rounded-[10px] transition-all " href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
+                        <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#work">Work</HashLink>
+                        <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#aboutme">{'About (me)'}</HashLink>
+                        <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#contact">Reach Out!</HashLink>
+                        <a className="text-[#4F78FF]/80 hover:text-[#4F78FF]/100 py-4 p-6 hover:bg-white/5 active:bg-white/5 border border-white/0 hover:border-white/10 active:border-white/10 rounded-[10px] transition-all " href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
                     </div>
                 )}
             </div>
