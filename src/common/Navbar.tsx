@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
 import ASLOGO from '../assets/aslogo.svg';
 import { useEffect, useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 interface NavbarProps {
     theme?: 'light' | 'dark';
@@ -16,17 +17,24 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
+    const { elementRef, isVisible, animationClasses } = useScrollAnimation({ 
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px',
+        delay: 300,
+      });
     return (
-        <nav className={`col-span-full flex flex-col
+        <nav 
+            ref={elementRef}
+            className={` col-span-full flex flex-col
             ${style === 'pinned'
                 ? 'w-full '
-                : 'md:col-start-2 md:w-fit mt-11 border border-white/5'
+                : ` md:w-fit ${isMobile ? 'm-2' : 'mt-11 ml-11'} :  border border-white/5 ${animationClasses}`
             }
             ${theme === 'light'
                 ? 'bg-white/30 text-black'
                 : 'bg-black/30 text-white/70'
             } 
-            ${isMobile ? isOpen ? 'rounded-none' : 'rounded-[0px_0px_15px_15px] bg-gradient-to-b from-black/60 to-black/30' : 'rounded-[15px] '} items-center font-neulisneue backdrop-blur-xs ${className}`}
+            ${isMobile ? isOpen ? 'rounded-none' : 'rounded-[0px_0px_15px_15px] bg-gradient-to-b from-black/60 to-black/30' : 'rounded-[15px]' } items-center font-neulisneue backdrop-blur-xs ${className}`}
         >
             <div className={`flex ${style === 'pinned' ? 'w-full justify-between p-8' : 'gap-72 pl-8 pr-4 py-4'} items-center `}>
                 <Link to='/'>

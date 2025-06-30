@@ -1,16 +1,44 @@
 import React from "react";
 import me from '../../assets/images/me.jpg';
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { TypingAnimation } from "../../ui/TypingAnimation";
 
 const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
+    const { elementRef, isVisible, animationClasses } = useScrollAnimation({
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    const { elementRef: titleRef, animationClasses: titleAnimationClasses } = useScrollAnimation({
+        threshold: 0.3,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    const { elementRef: cardsRef, animationClasses: cardsAnimationClasses } = useScrollAnimation({
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
     return (
-        <section id={id} className={`grid ${isMobile ? 'col-span-full px-4 grid-cols-8' : 'col-span-14 col-start-2 grid-cols-14 gap-x-12 px-8'} gap-y-16 text-white font-neulisneue`}>
-            <div className="col-span-full flex flex-col gap-1">
+        <section
+            ref={elementRef}
+            id={id}
+            className={`${animationClasses} grid ${isMobile ? 'col-span-full px-4 grid-cols-8' : 'col-span-14 col-start-2 grid-cols-14 gap-x-12 px-8'} gap-y-16 text-white font-neulisneue`}
+        >
+            <div ref={titleRef} className={`${titleAnimationClasses} col-span-full flex flex-col gap-1`}>
                 <div className="flex gap-4 px-4">
-                    <p className={`${isMobile ? 'text-nowrap text-3xl' : 'text-4xl'} -rotate-2 font-light font-neuliscursive text-white/30`}>introductions!                                                                             </p>
+                    <TypingAnimation
+                        content="introductions!"
+                        typingSpeed={60}
+                        cursorVisible={false}
+                        startDelay={500}
+                        isVisible={isVisible}
+                        className={`${isMobile ? 'text-nowrap text-3xl' : 'text-4xl'} -rotate-2 font-light font-neuliscursive text-white/30`}
+                    />
                     <svg className='rotate-8' width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.0288 9.36141C18.0313 9.63002 19.0616 9.03512 19.3303 8.03267C19.5989 7.03022 19.004 5.99983 18.0015 5.73123C16.9991 5.46262 15.9687 6.05752 15.7001 7.05997C15.4315 8.06241 16.0264 9.09281 17.0288 9.36141Z" fill="#4F78FF" />
                         <path d="M16.7856 10.269C17.621 10.4928 18.1168 11.3515 17.8929 12.1868L15.1457 22.4396L16.3198 22.07C17.1447 21.8104 18.0239 22.2687 18.2836 23.0936C18.5432 23.9185 18.085 24.7978 17.26 25.0574L15.5417 25.5983C13.4199 26.2661 11.3973 24.3283 11.9729 22.1801L14.8678 11.3762C15.0916 10.5409 15.9503 10.0451 16.7856 10.269Z" fill="#4F78FF" />
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.9466 19.7375C28.7083 28.0912 20.1217 33.0487 11.7679 30.8103C3.41421 28.572 -1.54327 19.9854 0.69511 11.6316C2.93348 3.2779 11.5201 -1.67958 19.8738 0.558797C28.2275 2.79717 33.185 11.3838 30.9466 19.7375ZM29.1316 19.2511C27.1618 26.6024 19.6056 30.965 12.2543 28.9952C4.90301 27.0255 0.540431 19.4693 2.5102 12.118C4.47997 4.7667 12.0362 0.404118 19.3875 2.37389C26.7387 4.34366 31.1013 11.8999 29.1316 19.2511Z" fill="#4F78FF" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M30.9466 19.7375C28.7083 28.0912 20.1217 33.0487 11.7679 30.8103C3.41421 28.572 -1.54327 19.9854 0.69511 11.6316C2.93348 3.2779 11.5201 -1.67958 19.8738 0.558797C28.2275 2.79717 33.185 11.3838 30.9466 19.7375ZM29.1316 19.2511C27.1618 26.6024 19.6056 30.965 12.2543 28.9952C4.90301 27.0255 0.540431 19.4693 2.5102 12.118C4.47997 4.7667 12.0362 0.404118 19.3875 2.37389C26.7387 4.34366 31.1013 11.8999 29.1316 19.2511Z" fill="#4F78FF" />
                     </svg>
                 </div>
                 {isMobile &&
@@ -24,16 +52,19 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                     <img src={me} className=" w-full rounded-[15px] max-h-[880px] object-cover"></img>
                 </div>
             }
-            <div className={`${isMobile ? 'col-span-full ' : 'col-span-8 '} flex flex-col gap-6 text-[#A7A7A7] tracking-[0.01em]`}>
+            <div
+                ref={cardsRef}
+                className={`${cardsAnimationClasses} ${isMobile ? 'col-span-full ' : 'col-span-8 '} flex flex-col gap-6 text-[#A7A7A7] tracking-[0.01em]`}
+            >
                 <div className={`relative flex rounded-[15px] p-[2px] bg-gradient-to-bl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     {isMobile &&
                         <div className="absolute -rotate-2 right-8 -top-28 w-fit h-fit">
                             <img src={me} className="w-42 h-56 object-cover rounded-[20px]">
                             </img>
                             <svg className="absolute -top-4 -right-4" width="39" height="29" viewBox="0 0 39 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M15.2494 1.65081C16.5468 2.12304 17.2158 3.55765 16.7436 4.85509L16.0595 6.73448C15.5873 8.03192 14.1527 8.70089 12.8553 8.22866C11.5578 7.75643 10.8888 6.32182 11.3611 5.02438L12.0451 3.14499C12.5174 1.84755 13.952 1.17858 15.2494 1.65081Z" fill="#4F78FF" />
-                                <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M38.4512 24.6951C38.6195 26.0656 37.6449 27.3129 36.2745 27.4812L32.3043 27.9687C30.9339 28.1369 29.6865 27.1624 29.5183 25.792C29.35 24.4216 30.3245 23.1742 31.695 23.0059L35.6651 22.5185C37.0356 22.3502 38.2829 23.3247 38.4512 24.6951Z" fill="#4F78FF" />
-                                <path opacity="0.7" fill-rule="evenodd" clip-rule="evenodd" d="M31.7674 7.23223C32.7437 8.20854 32.7437 9.79146 31.7674 10.7678L23.9892 18.5459C23.0129 19.5223 21.43 19.5223 20.4537 18.5459C19.4774 17.5696 19.4774 15.9867 20.4537 15.0104L28.2319 7.23223C29.2082 6.25592 30.7911 6.25592 31.7674 7.23223Z" fill="#4F78FF" />
+                                <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M15.2494 1.65081C16.5468 2.12304 17.2158 3.55765 16.7436 4.85509L16.0595 6.73448C15.5873 8.03192 14.1527 8.70089 12.8553 8.22866C11.5578 7.75643 10.8888 6.32182 11.3611 5.02438L12.0451 3.14499C12.5174 1.84755 13.952 1.17858 15.2494 1.65081Z" fill="#4F78FF" />
+                                <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M38.4512 24.6951C38.6195 26.0656 37.6449 27.3129 36.2745 27.4812L32.3043 27.9687C30.9339 28.1369 29.6865 27.1624 29.5183 25.792C29.35 24.4216 30.3245 23.1742 31.695 23.0059L35.6651 22.5185C37.0356 22.3502 38.2829 23.3247 38.4512 24.6951Z" fill="#4F78FF" />
+                                <path opacity="0.7" fillRule="evenodd" clipRule="evenodd" d="M31.7674 7.23223C32.7437 8.20854 32.7437 9.79146 31.7674 10.7678L23.9892 18.5459C23.0129 19.5223 21.43 19.5223 20.4537 18.5459C19.4774 17.5696 19.4774 15.9867 20.4537 15.0104L28.2319 7.23223C29.2082 6.25592 30.7911 6.25592 31.7674 7.23223Z" fill="#4F78FF" />
                                 <path opacity="0.2" d="M5 7.5C5 8.88071 3.88071 10 2.5 10C1.11929 10 4.03689e-09 8.88071 2.60061e-09 7.5C1.16433e-09 6.11929 1.11929 5 2.5 5C3.88071 5 5 6.11929 5 7.5Z" fill="#4F78FF" />
                             </svg>
 
@@ -41,7 +72,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                     }
                     <div className={`${isMobile ? 'pt-16 p-9' : 'pt-20 p-12'} flex flex-col gap-6 bg-[#0e0e0e] w-full h-full rounded-[12px]`}>
                         <h1 className="font-neuliscursive font-bold text-white text-6xl">Hi!</h1>
-                        <p>I’m Adil Sanad, a Product Designer based out of Bangalore, India. </p>
+                        <p>I'm Adil Sanad, a Product Designer based out of Bangalore, India. </p>
                         <p>I graduated in Computer Science and Engineering from NIT Jalandhar, Punjab. As a product designer with dev chops, I am able to coordinate much more closely between both design and dev teams. </p>
                     </div>
                 </div>
@@ -67,7 +98,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                     </div>
                 </div>
                 <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
-                    <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] text-[#A7A7A7}`}>
+                    <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] text-[#A7A7A7]`}>
                         <h3 className="font-bold text-lg text-[#4F78FF]">some stuff I've done</h3>
                         <div className="flex flex-col gap-3">
                             <div className="flex gap-4 py-6 text-lg">

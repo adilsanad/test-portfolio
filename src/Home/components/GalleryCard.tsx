@@ -42,13 +42,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         <div
             onClick={handleClick}
             className={`
-                flex flex-col gap-3 rounded-[28px_28px_15px_15px] md:rounded-[15px] p-[2px] cursor-pointer bg-black/30
-                transition-all snap-mandatory
+                flex flex-col gap-3 rounded-[28px_28px_15px_15px] md:rounded-[15px] p-[2px] cursor-pointer bg-black/30 hover:p-[4px]
+                transition-all duration-75 ease-in-out
                 ${!isMobile ? `${isActive ? " bg-gradient-to-tr from-white/30 to-white/6 opacity-100" : "opacity-40"}` : ''}
                 ${className}
             `}
         >
-            <div className={`flex flex-col gap-3 bg-[#0e0e0e] w-full h-full rounded-[25px_25px_10px_10px] md:rounded-[12px] cursor-pointer overflow-hidden`}>
+            <div className={`flex flex-col gap-3 bg-[#0e0e0e] hover:bg-black w-full h-full rounded-[25px_25px_10px_10px] md:rounded-[12px] cursor-pointer overflow-hidden transition-all`}>
                 {isMobile &&
                     <div className="flex w-full p-4 pb-0 border border-white/15 bg-white/10 rounded-[25px_25px_0px_0px] shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)]">
                         <img
@@ -59,22 +59,25 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                     </div>
                 }
                 <div className="flex flex-col p-9">
-                    <div className="flex font-light justify-between text-white/40 pb-2">
-                        <h3>{org}</h3>
-                        <div className="flex gap-4 items-center">
-                            <h3>{year}</h3>
-                            {livelink &&
-                                <a href={livelink} target="_blank">
-                                    <svg className="h-4 mb-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.3428 0.15686H9.84277C9.56663 0.15686 9.34277 0.380718 9.34277 0.65686C9.34277 0.933002 9.56663 1.15686 9.84277 1.15686L13.1357 1.15686L3.98922 10.3033L4.69633 11.0104L13.8428 1.86397L13.8428 5.15686C13.8428 5.433 14.0666 5.65686 14.3428 5.65686C14.6189 5.65686 14.8428 5.433 14.8428 5.15686L14.8428 0.65686C14.8428 0.380717 14.6189 0.15686 14.3428 0.15686Z" fill="white" />
-                                        <path d="M1.5 5C1.5 4.17157 2.17157 3.5 3 3.5H6.5V2.5H3C1.61929 2.5 0.5 3.61929 0.5 5V12C0.5 13.3807 1.61929 14.5 3 14.5H10C11.3807 14.5 12.5 13.3807 12.5 12V8.5H11.5V12C11.5 12.8284 10.8284 13.5 10 13.5H3C2.17157 13.5 1.5 12.8284 1.5 12V5Z" fill="white" />
-                                    </svg>
-                                </a>
-                            }
+                    <div className="flex flex-col gap-3 font-light justify-between text-white/40">
+                        <div className="flex justify-between">
+                            <h3>{org}</h3>
+                            <div className="flex gap-4 items-center">
+                                <h3>{year}</h3>
+                                {livelink &&
+                                    <a href={livelink} target="_blank">
+                                        <svg className="h-4 mb-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.3428 0.15686H9.84277C9.56663 0.15686 9.34277 0.380718 9.34277 0.65686C9.34277 0.933002 9.56663 1.15686 9.84277 1.15686L13.1357 1.15686L3.98922 10.3033L4.69633 11.0104L13.8428 1.86397L13.8428 5.15686C13.8428 5.433 14.0666 5.65686 14.3428 5.65686C14.6189 5.65686 14.8428 5.433 14.8428 5.15686L14.8428 0.65686C14.8428 0.380717 14.6189 0.15686 14.3428 0.15686Z" fill="white" />
+                                            <path d="M1.5 5C1.5 4.17157 2.17157 3.5 3 3.5H6.5V2.5H3C1.61929 2.5 0.5 3.61929 0.5 5V12C0.5 13.3807 1.61929 14.5 3 14.5H10C11.3807 14.5 12.5 13.3807 12.5 12V8.5H11.5V12C11.5 12.8284 10.8284 13.5 10 13.5H3C2.17157 13.5 1.5 12.8284 1.5 12V5Z" fill="white" />
+                                        </svg>
+                                    </a>
+                                }
+                            </div>
                         </div>
+                        <div className="w-full h-[1px] flex bg-gradient-to-r from-white/40 to-white/10 rounded-full"></div>
                     </div>
-                    <div className="flex flex-col gap-5 pt-9 border-t border-white/40">
-                        <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-6 pt-9">
+                        <div className="flex flex-col gap-5">
                             <h1 className="text-3xl md:text-4xl">{title}</h1>
                             <div className="flex flex-wrap gap-2">
                                 {tags.map((tag, index) => (
@@ -92,7 +95,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                                 ))}
                             </div>
                         </div>
-                        <p className="opacity-50">{description}</p>
+                        <p className="opacity-50 pr-2">{description}</p>
                     </div>
                 </div>
             </div>

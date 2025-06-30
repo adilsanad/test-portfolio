@@ -10,6 +10,7 @@ import img4 from '../assets/images/webapp/compact home.png';
 import { HashLink } from "react-router-hash-link";
 
 const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
+
     return (
         <section className='grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl'>
             <Navbar style="pinned" isMobile={isMobile} />
@@ -20,7 +21,16 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                 </div>
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col gap-8 items-start' : ''} flex w-full items-center justify-between`}>
-                        <h1 className="text-5xl text-white font-normal tracking-tight">Webapp Overhaul</h1>
+                        <div className="flex md:flex-row flex-col justify-start">
+                            <h1 className="text-5xl text-white font-normal tracking-tight">Webapp Overhaul</h1>
+                            <a className="flex gap-2 items-center max-md:py-2" href="https://answersai.com" target="_blank">
+                                <p className="md:hidden">link to site</p>
+                                <svg className="h-4 mb-1 opacity-70 hover:scale-[1.1] hover:opacity-100 transition-all" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.3428 0.15686H9.84277C9.56663 0.15686 9.34277 0.380718 9.34277 0.65686C9.34277 0.933002 9.56663 1.15686 9.84277 1.15686L13.1357 1.15686L3.98922 10.3033L4.69633 11.0104L13.8428 1.86397L13.8428 5.15686C13.8428 5.433 14.0666 5.65686 14.3428 5.65686C14.6189 5.65686 14.8428 5.433 14.8428 5.15686L14.8428 0.65686C14.8428 0.380717 14.6189 0.15686 14.3428 0.15686Z" fill="white" />
+                                    <path d="M1.5 5C1.5 4.17157 2.17157 3.5 3 3.5H6.5V2.5H3C1.61929 2.5 0.5 3.61929 0.5 5V12C0.5 13.3807 1.61929 14.5 3 14.5H10C11.3807 14.5 12.5 13.3807 12.5 12V8.5H11.5V12C11.5 12.8284 10.8284 13.5 10 13.5H3C2.17157 13.5 1.5 12.8284 1.5 12V5Z" fill="white" />
+                                </svg>
+                            </a>
+                        </div>
                         <div className="flex gap-3">
                             <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
                             <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border bg-[#FF6246]/10 border-[#FF6246]/30 text-[#FF6246]">React</div>
