@@ -2,7 +2,6 @@ import React from "react";
 import me from '../../assets/images/me.jpg';
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { TypingAnimation } from "../../ui/TypingAnimation";
-
 const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
     const { elementRef, isVisible, animationClasses } = useScrollAnimation({
         threshold: 0.1,
@@ -23,7 +22,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
         <section
             ref={elementRef}
             id={id}
-            className={`${animationClasses} grid ${isMobile ? 'col-span-full px-4 grid-cols-8' : 'col-span-14 col-start-2 grid-cols-14 gap-x-12 px-8'} gap-y-16 text-white font-neulisneue`}
+            className={`${animationClasses} z-20 relative grid ${isMobile ? 'col-span-full px-4 grid-cols-8' : 'col-span-14 col-start-2 grid-cols-14 gap-x-12 px-8'} gap-y-16 text-white font-neulisneue`}
         >
             <div ref={titleRef} className={`${titleAnimationClasses} col-span-full flex flex-col gap-1`}>
                 <div className="flex gap-4 px-4">
@@ -56,7 +55,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                 ref={cardsRef}
                 className={`${cardsAnimationClasses} ${isMobile ? 'col-span-full ' : 'col-span-8 '} flex flex-col gap-6 text-[#A7A7A7] tracking-[0.01em]`}
             >
-                <div className={`relative flex rounded-[15px] p-[2px] bg-gradient-to-bl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
+                <div className={`relative flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-bl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     {isMobile &&
                         <div className="absolute -rotate-2 right-8 -top-28 w-fit h-fit">
                             <img src={me} className="w-42 h-56 object-cover rounded-[20px]">
@@ -70,14 +69,14 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
 
                         </div>
                     }
-                    <div className={`${isMobile ? 'pt-16 p-9' : 'pt-20 p-12'} flex flex-col gap-6 bg-[#0e0e0e] w-full h-full rounded-[12px]`}>
+                    <div className={`${isMobile ? 'pt-16 p-9' : 'pt-20 p-12'} flex flex-col gap-6 bg-[#0e0e0e] w-full h-full rounded-[32px]`}>
                         <h1 className="font-neuliscursive font-bold text-white text-6xl">Hi!</h1>
                         <p>I'm Adil Sanad, a Product Designer based out of Bangalore, India. </p>
                         <p>I graduated in Computer Science and Engineering from NIT Jalandhar, Punjab. As a product designer with dev chops, I am able to coordinate much more closely between both design and dev teams. </p>
                     </div>
                 </div>
-                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
-                    <div className={`${isMobile ? 'p-9 gap-6' : 'px-12 py-9 gap-3 '} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] `}>
+                <div className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
+                    <div className={`${isMobile ? 'p-9 gap-6' : 'px-12 py-9 gap-3 '} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[32px] `}>
                         <div className={`flex ${isMobile ? 'flex-col gap-2' : 'gap-8'}  w-full`}>
                             <h3 className="font-bold text-white max-md:text-xl">Skills</h3>
                             <div className={`flex flex-wrap ${isMobile ? 'gap-2' : 'gap-4 '} items-center`}>
@@ -97,8 +96,8 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                         </div>
                     </div>
                 </div>
-                <div className={`flex rounded-[15px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
-                    <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[12px] text-[#A7A7A7]`}>
+                <div className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
+                    <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[32px] text-[#A7A7A7]`}>
                         <h3 className="font-bold text-lg text-[#4F78FF]">some stuff I've done</h3>
                         <div className="flex flex-col gap-3">
                             <div className="flex gap-4 py-6 text-lg">

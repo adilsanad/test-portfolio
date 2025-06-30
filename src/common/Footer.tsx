@@ -1,7 +1,11 @@
+import bg3 from '../assets/images/bg3.png';
+
 const Footer = ({ id }: { id: string }) => {
     return (
-        <footer id={id} className="relative col-span-full gap-24 md:gap-32 flex flex-col w-full items-end px-12 md:px-20 py-15 md:py-20 bg-[#1A1A1A] text-white font-neulisneue overflow-x-hidden">
-            <div className="flex gap-8 items-center">
+        <footer id={id} className="relative col-span-full gap-24 md:gap-32 overflow-hidden flex flex-col w-full items-end px-12 md:px-20 py-15 md:py-20 bg-[#1A1A1A] text-white font-neulisneue overflow-x-hidden">
+
+            <img src={bg3} className="absolute -top-24 bottom-0 -right-12 left-0 w-full h-auto z-0 blur-xs" />
+            <div className="flex gap-8 items-center z-20">
                 <a href="mailto:adilsanad059@gmail.com">
                     <svg className="h-6 md:h-8" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M35.8421 8.02209L20.223 17.4339L4.60398 8.02209V4.25738L20.223 13.6691L35.8421 4.25738M35.8421 0.492676H4.60398C2.43684 0.492676 0.699219 2.16797 0.699219 4.25738V26.8456C0.699219 27.8441 1.11061 28.8016 1.8429 29.5077C2.57518 30.2137 3.56837 30.6103 4.60398 30.6103H35.8421C36.8777 30.6103 37.8709 30.2137 38.6032 29.5077C39.3354 28.8016 39.7468 27.8441 39.7468 26.8456V4.25738C39.7468 2.16797 37.9897 0.492676 35.8421 0.492676Z" fill="white" />
@@ -20,11 +24,11 @@ const Footer = ({ id }: { id: string }) => {
                     </svg>
                 </a>
             </div>
-            <svg className="absolute max-md:w-32 max-md:-rotate-30 top-20 right-52 md:top-16 md:right-80" width="168" height="132" viewBox="0 0 168 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="z-20 absolute max-md:w-32 max-md:-rotate-30 top-20 right-52 md:top-16 md:right-80" width="168" height="132" viewBox="0 0 168 132" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M166.579 35.1032C168.268 33.6787 168.482 31.1551 167.057 29.4666L143.843 1.95134C142.418 0.262869 139.895 0.0489212 138.206 1.47348C136.518 2.89803 136.304 5.42164 137.728 7.11011L158.363 31.5681L133.905 52.2032C132.217 53.6277 132.003 56.1513 133.428 57.8398C134.852 59.5283 137.376 59.7422 139.064 58.3177L166.579 35.1032ZM9.11968 58.7129L12.8988 60.0236L9.11968 58.7129ZM12.9968 130.005C8.98457 114.388 4.1611 85.2162 12.8988 60.0236L5.34053 57.4021C-4.19329 84.89 1.13402 115.981 5.24839 131.995L12.9968 130.005ZM12.8988 60.0236C18.0684 45.1187 26.7963 36.0994 37.6249 30.7851C48.6064 25.3958 62.0447 23.6765 76.7271 24.0487C91.3881 24.4203 106.928 26.8617 121.966 29.5098C136.868 32.1339 151.436 34.9952 163.662 36.0317L164.338 28.0603C152.58 27.0634 138.548 24.3067 123.354 21.631C108.295 18.9794 92.2408 16.4394 76.9298 16.0512C61.6401 15.6636 46.7282 17.4061 34.1004 23.6033C21.3198 29.8756 11.1793 40.5677 5.34053 57.4021L12.8988 60.0236Z" fill="#4F78FF" />
             </svg>
-            <h1 className="text-right text-white/20 tracking-tighter font-neuliscursive text-8xl md:text-[180px] font-semibold -mr-12 md:-mr-20">reach out!</h1>
-            <div className="flex max-md:flex-col gap-1 md:gap-4 md:items-end md:justify-between">
+            <h1 className="z-20 text-right text-white/20 tracking-tighter font-neuliscursive text-8xl md:text-[180px] font-semibold -mr-12">reach out!</h1>
+            <div className="z-20 flex max-md:flex-col gap-1 md:gap-4 md:items-end md:justify-between">
                 <p className=" font-neuliscursive font-medium  text-xl text-right tracking-tighter">made with  <span className="text-[rgb(70,57,255)] text-xl px-1 drop-shadow-[0px_0px_24px_rgba(57,43,255,1)]">{`<  >`}</span></p>
                 <p className=" max-md:text-right max-md:text-lg text-xl text-white/30 tracking-tighter ">© 2025 adil </p>
             </div>

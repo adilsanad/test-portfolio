@@ -42,13 +42,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         <div
             onClick={handleClick}
             className={`
-                flex flex-col gap-3 rounded-[28px_28px_15px_15px] md:rounded-[15px] p-[2px] cursor-pointer bg-black/30 hover:p-[4px]
-                transition-all duration-75 ease-in-out
-                ${!isMobile ? `${isActive ? " bg-gradient-to-tr from-white/30 to-white/6 opacity-100" : "opacity-40"}` : ''}
+                flex flex-col gap-3 rounded-[28px_28px_15px_15px] ${isActive ? 'md:rounded-[15px]' : 'md:rounded-[32px]'} p-[2px] cursor-pointer bg-black/30 hover:p-[3px]
+                transition-all delay-300 duration-300 ease-in-out
+                ${!isMobile ? `${isActive ? " bg-gradient-to-tr from-white/20 to-white/6 opacity-100" : "opacity-40"}` : ''}
                 ${className}
             `}
         >
-            <div className={`flex flex-col gap-3 bg-[#0e0e0e] hover:bg-black w-full h-full rounded-[25px_25px_10px_10px] md:rounded-[12px] cursor-pointer overflow-hidden transition-all`}>
+            <div className={`flex flex-col gap-3 bg-[black]/80 backdrop-blur-sm hover:bg-black w-full h-full rounded-[25px_25px_10px_10px] md:rounded-[32px] cursor-pointer overflow-hidden transition-all`}>
                 {isMobile &&
                     <div className="flex w-full p-4 pb-0 border border-white/15 bg-white/10 rounded-[25px_25px_0px_0px] shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)]">
                         <img

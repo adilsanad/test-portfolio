@@ -28,7 +28,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
             className={` col-span-full flex flex-col
             ${style === 'pinned'
                 ? 'w-full '
-                : ` md:w-fit ${isMobile ? 'm-2' : 'mt-11 ml-11'} :  border border-white/5 ${animationClasses}`
+                : ` md:w-fit ${isMobile ? 'm-2 rounded-[15px]' : 'mt-11 ml-11'} :  border border-white/5 ${animationClasses}`
             }
             ${theme === 'light'
                 ? 'bg-white/30 text-black'
@@ -46,15 +46,15 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                         onClick={handleClick}
                     >
                         <div
-                            className={`w-8 h-0.75 bg-gray-100 rounded-[5px] transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2.25" : ""
+                            className={` h-[3px] bg-white/75 rounded-[5px] transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2.25 w-6" : "w-5"
                                 }`}
                         />
                         <div
-                            className={`w-8 h-0.75 bg-gray-100 rounded-[5px] transition-all duration-300 ${isOpen ? "opacity-0" : ""
+                            className={`w-6 h-[3px] bg-white/75 rounded-[5px] transition-all duration-300 ${isOpen ? "opacity-0" : ""
                                 }`}
                         />
                         <div
-                            className={`w-8 h-0.75 bg-gray-100 rounded-[5px] transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2.25" : ""
+                            className={`h-[3px] bg-white/75 rounded-[5px] transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-2.25 w-6" : "w-5"
                                 }`}
                         />
                     </div>

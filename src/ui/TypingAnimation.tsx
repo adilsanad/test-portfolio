@@ -96,6 +96,7 @@ export function TypingAnimation({
     const isMultipleContent = contentArray.length > 1;
     const shouldLoop = isMultipleContent && loop;
 
+    // Handle cursor blinking
     useEffect(() => {
         if (!cursorVisible || !hasStarted) {
             setShowCursor(false);
@@ -109,6 +110,20 @@ export function TypingAnimation({
         return () => clearInterval(interval);
     }, [cursorVisible, cursorBlinkSpeed, hasStarted]);
 
+    // Reset when visibility changes
+    useEffect(() => {
+        if (!isVisible) {
+            // Reset all states when component becomes invisible
+            setDisplayContent('');
+            setCurrentIndex(0);
+            setIsDeleting(false);
+            setCharIndex(0);
+            setIsComplete(false);
+            setHasStarted(false);
+        }
+    }, [isVisible]);
+
+    // Handle start delay
     useEffect(() => {
         if (!hasStarted && isVisible) {
             const startTimeout = setTimeout(() => {
@@ -116,9 +131,12 @@ export function TypingAnimation({
             }, startDelay);
             return () => clearTimeout(startTimeout);
         }
+    }, [hasStarted, isVisible, startDelay]);
 
-        if (!isVisible) return;
-
+    // Main animation effect
+    useEffect(() => {
+        // Early return if not ready to animate
+        if (!hasStarted || !isVisible) return;
 
         const currentItem = contentArray[currentIndex];
         const isJSX = React.isValidElement(currentItem) || Array.isArray(currentItem);
@@ -163,11 +181,7 @@ export function TypingAnimation({
                     }, pauseBeforeNext);
                 }
             }
-
-            return () => clearTimeout(timeout);
-        }
-
-        if (isJSX) {
+        } else if (isJSX) {
             const allTextPaths = extractTextPaths(currentItem);
             const fullTextLength = allTextPaths.reduce((sum, t) => sum + t.text.length, 0);
 
@@ -210,12 +224,14 @@ export function TypingAnimation({
                     }, pauseBeforeNext);
                 }
             }
-
-            return () => clearTimeout(timeout);
         }
 
+        return () => {
+            if (timeout) clearTimeout(timeout);
+        };
     }, [
         hasStarted,
+        isVisible,
         charIndex,
         currentIndex,
         isDeleting,
@@ -237,7 +253,7 @@ export function TypingAnimation({
                     <span className={cursorClassName}>{cursorChar}</span>
                 )}
             </div>
-            <span className={`${className} opacity-0`}> </span>
+            <span className={`${className} opacity-0`}> </span>
         </span>
     );
 }

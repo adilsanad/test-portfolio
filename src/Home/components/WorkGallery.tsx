@@ -20,15 +20,55 @@ interface GalleryData {
   livelink?: string;
 }
 
+// Easing functions
+const easings = {
+  // Smooth ease-in-out-cubic
+  easeInOutCubic: (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+  
+  // Smooth ease-out-quart (recommended for smooth deceleration)
+  easeOutQuart: (t: number) => 1 - Math.pow(1 - t, 4),
+  
+  // Smooth ease-in-out-quart
+  easeInOutQuart: (t: number) => t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2,
+  
+  // Spring-like easing
+  easeOutBack: (t: number) => {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  }
+};
+
+function smoothScrollTo(element: HTMLElement, target: number, duration: number = 600, easing = easings.easeOutQuart) {
+  const start = element.scrollTop;
+  const distance = target - start;
+  const startTime = performance.now();
+  
+  function animation(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    const easedProgress = easing(progress);
+    element.scrollTop = start + distance * easedProgress;
+    
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  }
+  
+  requestAnimationFrame(animation);
+}
+
+
 function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
   const { elementRef, isVisible, animationClasses } = useScrollAnimation({
     threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
   });
   
   const { containerStyle, pulseStyle, PulseKeyframes } = usePulseAnimation({
     pulseColor: '#ff4444',
-    pulseDirection: 'left',
+    pulseDirection: 'right',
     pulseOpacity: 0.7,
     duration: 1000,
     delay: 2000,
@@ -71,6 +111,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       image: CycloCover,
       link: '/cyclo'
     },
+    
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -102,20 +143,25 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
   }, [isVisible, galleryCardData.length]);
 
   // Smooth scroll to active card
-  useEffect(() => {
+ useEffect(() => {
     if (listRef.current && cardRefs.current[activeIndex] && !isMobile) {
       const listContainer = listRef.current;
       const activeCard = cardRefs.current[activeIndex];
       const containerHeight = listContainer.clientHeight;
-
-      const targetScrollTop = activeCard.offsetTop - listContainer.offsetTop - 20;
+      
+      // Calculate the target position with some padding from top
+      const cardTop = activeCard.offsetTop - listContainer.offsetTop;
+      const topPadding = -10; // Adjust this value for spacing from top
+      
+      // Move card to top with padding
+      let targetScrollTop = cardTop - topPadding;
+      
+      // Ensure we don't scroll past boundaries
       const maxScrollTop = listContainer.scrollHeight - containerHeight;
-      const finalScrollTop = Math.min(targetScrollTop, maxScrollTop);
-
-      listContainer.scrollTo({
-        top: Math.max(0, finalScrollTop),
-        behavior: "smooth",
-      });
+      targetScrollTop = Math.max(0, Math.min(targetScrollTop, maxScrollTop));
+      
+      // Use smooth custom scrolling
+      smoothScrollTo(listContainer, targetScrollTop, 800, easings.easeInOutQuart);
     }
   }, [activeIndex, isMobile]);
 
@@ -175,17 +221,18 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       </div>
 
       {/* Left Column: Gallery Cards */}
-      <div className="relative col-span-full md:col-span-5 md:pt-4">
+      <div className="relative col-span-full backdrop-blur-xl md:col-span-5 md:pt-4">
         <div
           ref={listRef}
           className={`${
             isMobile
               ? 'col-span-full gap-6'
-              : 'col-span-5 gap-4 h-[80vh] overflow-y-auto overflow-x-hidden custom-scrollbar'
+              : 'col-span-5 gap-4 h-[80vh] overflow-y-auto  custom-scrollbar'
           } relative flex flex-col`}
           style={{
             maskImage: isMobile ? 'none' : 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
-            WebkitMaskImage: isMobile ? 'none' : 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+            WebkitMaskImage: isMobile ? 'none' : 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+            scrollBehavior: 'auto'
           }}
         >
           {galleryCardData.map((card, index) => {
@@ -212,21 +259,13 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
                   isActive={isActive}
                   onClick={() => handleCardClick(index)}
                   isMobile={isMobile}
-                  className={`${
-                    !isMobile
-                      ? `duration-500 ${
-                          isActive
-                            ? 'rotate-0'
-                            : index % 2 === 0 ? 'rotate-2' : '-rotate-2'
-                        }`
-                      : ''
-                  }`}
                   link={card.link}
                   livelink={card.livelink}
                 />
               </div>
             );
           })}
+          {!isMobile && <div className="h-[10vh] shrink-0" />}
         </div>
       </div>
 
@@ -244,12 +283,12 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
             {galleryCardData.map((card, index) => (
               <div
                 key={`preview-${index}`}
-                className={`absolute inset-8 -bottom-4 flex items-end p-4 pb-0 transition-all duration-400 ease-in-out ${
+                className={`absolute inset-8 -bottom-12 flex items-end p-4 pb-0 transition-all duration-400 ease-in-out ${
                   index === activeIndex
                     ? isTransitioning
-                      ? 'opacity-0 scale-95'
-                      : 'opacity-100 scale-100'
-                    : 'opacity-0 scale-95 pointer-events-none'
+                      ? 'opacity-0 translate-y-0'
+                      : 'opacity-100 -translate-y-8'
+                    : 'opacity-0 translate-y-0 pointer-events-none'
                 }`}
                 style={{
                   transitionDelay: index === activeIndex
