@@ -15,7 +15,6 @@ interface TypingAnimationProps {
     onComplete?: () => void;
     className?: string;
     cursorClassName?: string;
-    isVisible?: boolean;
 }
 
 interface TextPath {
@@ -81,8 +80,7 @@ export function TypingAnimation({
     startDelay = 0,
     onComplete,
     className = '',
-    cursorClassName = '',
-    isVisible = true
+    cursorClassName = ''
 }: TypingAnimationProps) {
     const [displayContent, setDisplayContent] = useState<ReactNode>('');
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,10 +89,36 @@ export function TypingAnimation({
     const [showCursor, setShowCursor] = useState(cursorVisible);
     const [isComplete, setIsComplete] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const elementRef = useRef<HTMLSpanElement>(null);
 
     const contentArray = Array.isArray(content) ? content : [content];
     const isMultipleContent = contentArray.length > 1;
     const shouldLoop = isMultipleContent && loop;
+
+    // Set up Intersection Observer to handle visibility
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    setIsVisible(entry.isIntersecting);
+                });
+            },
+            {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            }
+        );
+
+        if (elementRef.current) {
+            observer.observe(elementRef.current);
+        }
+
+        return () => {
+            if (elementRef.current) {
+                observer.unobserve(elementRef.current);
+            }
+        };
+    }, []);
 
     // Handle cursor blinking
     useEffect(() => {
@@ -246,7 +270,7 @@ export function TypingAnimation({
     ]);
 
     return (
-        <span className={`flex justify-between`}>
+        <span ref={elementRef} className={`flex justify-between`}>
             <div className={`flex items-center ${className}`}>
                 {displayContent}
                 {showCursor && !isComplete && (

@@ -35,8 +35,6 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
     setCanScrollRight(activeIndex < personas.length - 1)
   }, [activeIndex, personas.length])
 
-  const CARD_WIDTH = 896 + 36 // 768px (3xl) + 36px (gap) to include margin
-
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
       let newIndex = direction === "right" ? activeIndex + 1 : activeIndex - 1
@@ -44,18 +42,67 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
       // Ensure the index stays within bounds
       newIndex = Math.max(0, Math.min(newIndex, personas.length - 1))
 
-      // Update state and scroll the container
+      // Update state
       setActiveIndex(newIndex)
-      scrollContainerRef.current.scrollTo({
-        left: newIndex * CARD_WIDTH,
-        behavior: "smooth",
-      })
+
+      // Get the actual card element to scroll to
+      const cards = scrollContainerRef.current.children
+      if (cards[newIndex]) {
+        // Calculate the scroll position based on the actual card position
+        const cardElement = cards[newIndex] as HTMLElement
+        const containerWidth = scrollContainerRef.current.offsetWidth
+        const cardWidth = cardElement.offsetWidth
+        const cardLeft = cardElement.offsetLeft
+        
+        // Center the card in the viewport if possible
+        const scrollLeft = cardLeft - (containerWidth - cardWidth) / 2
+        
+        scrollContainerRef.current.scrollTo({
+          left: Math.max(0, scrollLeft),
+          behavior: "smooth",
+        })
+      }
     }
   }
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }))
   }
+
+  // Handle scroll events to update active index based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current
+        const scrollLeft = container.scrollLeft
+        const containerWidth = container.offsetWidth
+        
+        // Find which card is most centered in the viewport
+        let closestIndex = 0
+        let closestDistance = Infinity
+        
+        Array.from(container.children).forEach((child, index) => {
+          const card = child as HTMLElement
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2
+          const viewportCenter = scrollLeft + containerWidth / 2
+          const distance = Math.abs(cardCenter - viewportCenter)
+          
+          if (distance < closestDistance) {
+            closestDistance = distance
+            closestIndex = index
+          }
+        })
+        
+        setActiveIndex(closestIndex)
+      }
+    }
+
+    const container = scrollContainerRef.current
+    if (container) {
+      container.addEventListener('scroll', handleScroll)
+      return () => container.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div className="col-span-full grid grid-cols-8 md:grid-cols-16 max-md:px-6 gap-y-4 md:gap-y-24">
@@ -80,13 +127,14 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
       {/* Scrollable Persona Cards */}
       <div
         ref={scrollContainerRef}
-        className="col-span-full md:col-span-13 md:col-start-4 flex w-full gap-9 overflow-x-hidden custom-scrollbar scroll-smooth"
+        className="col-span-full md:col-span-13 md:col-start-4 flex w-full gap-9 overflow-x-hidden custom-scrollbar scroll-smooth snap-x snap-mandatory"
       >
         {personas.map((persona, index) => (
           <div
             key={index}
-            className={`flex flex-col md:min-w-4xl min-w-full gap-5 ${index === personas.length - 1 ? "mr-[calc(50vw-384px)]" : "" // Add extra right margin only to the last card
-              }`}
+            className={`flex flex-col md:min-w-4xl min-w-full gap-5 snap-center ${
+              index === personas.length - 1 ? "md:mr-[calc(50vw-384px)]" : ""
+            }`}
           >
             {/* Profile Header */}
             <div className="flex flex-col items-center justify-between p-5 md:p-8 gap-4 md:gap-8 w-full bg-black/30 rounded-[15px] border border-white/20">
@@ -94,8 +142,8 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 <img className="flex h-20 w-auto" src={persona.profileImage || "/placeholder.svg"} alt="Profile" />
                 <div className="flex flex-col w-fit gap-0 md:gap-1">
                   <h1 className="text-2xl md:text-3xl font-bold flex text-white">{persona.name}</h1>
-                  <p className="flex w-fit font-normal text-sm md:text-lg text-nowrap text-[#9D9D9D]">
-                    Aged {persona.age}  · {persona.occupation} · {persona.location}
+                  <p className="flex w-fit font-normal text-sm md:text-lg text-wrap text-[#9D9D9D]">
+                    Aged {persona.age}  · {persona.occupation}  {persona.location}
                   </p>
                 </div>
               </div>
@@ -117,8 +165,8 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 {/* Pain Points */}
                 <div className="flex flex-col md:gap-4">
                   <div
-                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10"
-                    onClick={() => toggleSection("painPoints")}
+                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10 md:cursor-default cursor-pointer"
+                    onClick={() => isMobile && toggleSection("painPoints")}
                   >
                     <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Pain Points</h3>
                     <svg
@@ -153,8 +201,8 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 {/* Goals */}
                 <div className="flex flex-col md:gap-4">
                   <div
-                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10"
-                    onClick={() => toggleSection("goals")}
+                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10 md:cursor-default cursor-pointer"
+                    onClick={() => isMobile && toggleSection("goals")}
                   >
                     <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Goals</h3>
                     <svg
@@ -195,4 +243,3 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
 }
 
 export default PersonaScroll
-

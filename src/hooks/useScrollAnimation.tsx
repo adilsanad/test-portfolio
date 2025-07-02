@@ -16,7 +16,7 @@ export const useScrollAnimation = (options: UseScrollAnimationOptions = {}) => {
     threshold = 0.1,
     rootMargin = '0px 0px -100px 0px',
     triggerOnce = true,
-    delay = 300,
+    delay = 150,
     duration = 1000
 
   } = options;

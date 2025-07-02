@@ -31,7 +31,6 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                         typingSpeed={60}
                         cursorVisible={false}
                         startDelay={500}
-                        isVisible={isVisible}
                         className={`${isMobile ? 'text-nowrap text-3xl' : 'text-4xl'} -rotate-2 font-light font-neuliscursive text-white/30`}
                     />
                     <svg className='rotate-8' width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
