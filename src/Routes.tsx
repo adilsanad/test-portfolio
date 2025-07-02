@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { HashRouter, useLocation } from "react-router";
 import AAIWebapp from "./projects/AAIWebapp";
 import AAIWebsite from "./projects/AAIWebsite";
+import Pagr from "./projects/Pagr";
 
 const AppRoutes = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -36,6 +37,7 @@ const AppRoutes = () => {
           <Route path="/cyclo" element={<Cyclo isMobile={isMobile} />} />
           <Route path="/aai-webapp-revamp" element={<AAIWebapp isMobile={isMobile}/>} />
           <Route path="/aai-website-refresh" element={<AAIWebsite isMobile={isMobile}/>}/>
+          <Route path="/pagr" element={<Pagr isMobile={isMobile}/>} />
         </Routes>
       </Layout>
     </HashRouter>

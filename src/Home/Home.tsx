@@ -14,7 +14,7 @@ function Home({ isMobile }: { isMobile: boolean }) {
     const options = useMemo(() => ({
         fullScreen: { enable: false },
         particles: {
-            number: { value: 30, density: { enable: true, area: 1000 } },
+            number: { value: 30, density: { enable: true, area: 1200 } },
             size: { value: 2.5 },
             move: { enable: true, speed: 1 },
             opacity: { value: 0.3 },

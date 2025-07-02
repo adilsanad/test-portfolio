@@ -12,7 +12,7 @@ interface PersonaData {
   insights: string[];
   painPoints: string[];
   goals: string[];
-  bgcolor: string;
+  bgColor: string;
 }
 
 interface PersonaScrollProps {
@@ -85,31 +85,27 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
         {personas.map((persona, index) => (
           <div
             key={index}
-            className={`flex flex-col md:min-w-4xl min-w-full gap-5 ${
-              index === personas.length - 1 ? "mr-[calc(50vw-384px)]" : "" // Add extra right margin only to the last card
-            }`}
+            className={`flex flex-col md:min-w-4xl min-w-full gap-5 ${index === personas.length - 1 ? "mr-[calc(50vw-384px)]" : "" // Add extra right margin only to the last card
+              }`}
           >
             {/* Profile Header */}
-            <div className="flex max-md:flex-col items-center justify-between p-5 md:p-6 gap-4 md:gap-12 w-full bg-black/30 rounded-[15px] border border-white/20">
-              <div className="flex w-full items-center gap-4 md:gap-6">
-                <img className="max-md:h-20" src={persona.profileImage || "/placeholder.svg"} alt="Profile" />
-                <div className="flex flex-col w-fit gap-0 md:gap-2">
+            <div className="flex flex-col items-center justify-between p-5 md:p-8 gap-4 md:gap-8 w-full bg-black/30 rounded-[15px] border border-white/20">
+              <div className="flex w-full h-min items-center gap-4 md:gap-6">
+                <img className="flex h-20 w-auto" src={persona.profileImage || "/placeholder.svg"} alt="Profile" />
+                <div className="flex flex-col w-fit gap-0 md:gap-1">
                   <h1 className="text-2xl md:text-3xl font-bold flex text-white">{persona.name}</h1>
-                  <div className="flex flex-col gap-0 text-sm md:text-lg text-[#9D9D9D]">
-                    <p className="flex w-fit text-nowrap">
-                      Aged {persona.age} · {persona.occupation}
-                    </p>
-                    <p>{persona.location}</p>
-                  </div>
+                  <p className="flex w-fit font-normal text-sm md:text-lg text-nowrap text-[#9D9D9D]">
+                    Aged {persona.age}  · {persona.occupation} · {persona.location}
+                  </p>
                 </div>
               </div>
-              <p className="max-md:text-base text-[#9D9D9D]">{persona.description}</p>
+              <p className="flex w-full max-md:text-base font- text-[#9D9D9D]">{persona.description}</p>
             </div>
 
             {/* Insights, Pain Points, and Goals */}
             <div className="flex flex-col w-full rounded-[15px] border border-white/20 overflow-hidden">
               <div className="flex flex-col gap-4 max-md:px-6 p-10 w-full bg-black/30">
-                <h3 className="text-2xl font-bold" style={{ color: persona.bgcolor }}>Insights</h3>
+                <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Insights</h3>
                 <ul className="list-disc pl-4 md:pl-8 max-md:text-base text-[#9D9D9D]">
                   {persona.insights.map((insight, idx) => (
                     <li key={idx}>{insight}</li>
@@ -117,14 +113,14 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 </ul>
               </div>
 
-              <div className="flex max-md:flex-col md:gap-4 md:p-12 w-full" style={{ backgroundColor: `${persona.bgcolor}33` }}>
+              <div className="flex max-md:flex-col md:gap-4 md:p-12 w-full" style={{ backgroundColor: `${persona.bgColor}33` }}>
                 {/* Pain Points */}
                 <div className="flex flex-col md:gap-4">
                   <div
                     className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10"
                     onClick={() => toggleSection("painPoints")}
                   >
-                    <h3 className="text-2xl font-bold" style={{ color: persona.bgcolor }}>Pain Points</h3>
+                    <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Pain Points</h3>
                     <svg
                       className={`md:hidden ${expandedSections.painPoints ? "rotate-180" : ""} transition-all`}
                       width="30"
@@ -160,7 +156,7 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                     className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10"
                     onClick={() => toggleSection("goals")}
                   >
-                    <h3 className="text-2xl font-bold" style={{ color: persona.bgcolor }}>Goals</h3>
+                    <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Goals</h3>
                     <svg
                       className={`md:hidden ${expandedSections.goals ? "rotate-180" : ""} transition-all`}
                       width="30"

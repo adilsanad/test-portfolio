@@ -42,7 +42,7 @@ const personaData = [
             "Seeks a curated selection of high-performance cycling components",
             "Needs a store that caters to multi-discipline athletes",
         ],
-        bgcolor: "#4260C6"
+        bgColor: "#4260C6"
     },
     {
         name: "Amelie Flores",
@@ -69,7 +69,7 @@ const personaData = [
             "Upgrade components for better performance",
             "Discover new cycling routes and challenges",
         ],
-        bgcolor: "#FFB800"
+        bgColor: "#FFB800"
     },
 ]
 

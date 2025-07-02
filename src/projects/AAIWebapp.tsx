@@ -8,20 +8,25 @@ import img2 from '../assets/images/webapp/flashcards.png';
 import img3 from '../assets/images/webapp/notedexpanded.png';
 import img4 from '../assets/images/webapp/compact home.png';
 import { HashLink } from "react-router-hash-link";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
-
+    const { elementRef, isVisible, animationClasses } = useScrollAnimation({
+        threshold: 0.2,
+        rootMargin: '0px',
+        delay: 1000,
+    });
     return (
         <section className='grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl'>
             <Navbar style="pinned" isMobile={isMobile} />
-            <div className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
+            <div ref={elementRef} className={`${animationClasses} ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
                     <p>AnswersAi</p>
                     <p>2025 · Shipped</p>
                 </div>
                 <div className="flex flex-col gap-12">
                     <div className={`${isMobile ? 'flex-col gap-8 items-start' : ''} flex w-full items-center justify-between`}>
-                        <div className="flex md:flex-row flex-col justify-start">
+                        <div className="flex md:flex-row md:gap-6 flex-col justify-start">
                             <h1 className="text-5xl text-white font-normal tracking-tight">Webapp Overhaul</h1>
                             <a className="flex gap-2 items-center max-md:py-2" href="https://answersai.com" target="_blank">
                                 <p className="md:hidden">link to site</p>
@@ -60,9 +65,9 @@ const AAiWebapp = ({ isMobile }: { isMobile: boolean }) => {
                 </div>
             </div>
             <div className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
-                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
-                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />
-                <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE2} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-cover" src={HERO_IMAGE1} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-cover" src={COVER_IMAGE} />
+                <img className="rounded-[15px] w-full max-w-[720px] object-cover" src={HERO_IMAGE2} />
             </div>
             <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <div className="flex flex-col gap-5 p-6 md:p-9 border border-[#6268FF] rounded-[10px] bg-[#6268FF]/5">

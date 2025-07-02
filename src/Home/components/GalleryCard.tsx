@@ -34,6 +34,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     const handleClick = () => {
         if (isMobile) {
             navigate(link);
+        } else if (isActive) {
+            navigate(link);
         } else if (onClick) {
             onClick();
         }
@@ -43,8 +45,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
             onClick={handleClick}
             className={`
                 flex flex-col gap-3 rounded-[28px_28px_15px_15px] ${isActive ? 'md:rounded-[15px]' : 'md:rounded-[32px]'} p-[2px] cursor-pointer bg-black/30 hover:p-[3px]
-                transition-all delay-300 duration-300 ease-in-out
-                ${!isMobile ? `${isActive ? " bg-gradient-to-tr from-white/20 to-white/6 opacity-100" : "opacity-40"}` : ''}
+                transition-all delay-300 duration-300 ease-in-out backdrop-blur-xl
+                ${!isMobile ? `${isActive ? " bg-gradient-to-tr from-white/20 to-white/6 opacity-100 " : "opacity-40 "}` : ''}
                 ${className}
             `}
         >
