@@ -2,7 +2,6 @@ import Navbar from "../common/Navbar";
 import COVER_IMAGE from '../assets/images/website/websitecover.png';
 import HERO_IMAGE1 from '../assets/images/website/websitehero1.png';
 import HERO_IMAGE2 from '../assets/images/website/websitehero2.png';
-import LANDING_PAGE from '../assets/images/website/websitecover.png';
 import INSTITUTIONS from '../assets/images/website/institutions.png';
 import SUBHOME from '../assets/images/website/snapshot.png';
 import PREVPAGE from '../assets/images/website/oldsite.png';

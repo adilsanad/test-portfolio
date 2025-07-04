@@ -1,13 +1,14 @@
-import Navbar from '../common/Navbar'
-import Hero from './components/Hero'
-import WorkGallery from './components/WorkGallery'
-import AboutMe from './components/AboutMe'
+import Navbar from '../common/Navbar';
+import Hero from './components/Hero';
+import WorkGallery from './components/WorkGallery';
+import AboutMe from './components/AboutMe';
 import React, { useCallback, useMemo } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Engine } from 'tsparticles-engine';
-import bg1 from '../assets/images/blue1.png'
-import bg2 from '../assets/images/blue2.png'
+import bg1 from '../assets/images/blue1.png';
+import mobbg1 from '../assets/images/mobblue1.png';
+import bg2 from '../assets/images/blue2.png';
 
 
 function Home({ isMobile }: { isMobile: boolean }) {
@@ -39,11 +40,19 @@ function Home({ isMobile }: { isMobile: boolean }) {
         <section className='relative grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-[#151515] overflow-hidden'>
             {/* Background SVGs */}
             <div className="absolute inset-0 z-10 w-full">
-                {/* First Background SVG */}
-                <img src={bg1} className="absolute top-0 w-full h-auto" />
+                {isMobile ? (
+                    <>
+                        <img src={mobbg1} className="absolute top-0  w-full md:h-auto" />
+                    </>
+                ) : (
+                    <>
 
-                {/* Second Background SVG */}
-                <img src={bg2} className="absolute top-128 h-auto w-full" />
+                        {/* First Background SVG */}
+                        <img src={bg1} className="absolute top-0  w-full md:h-auto" />
+                        {/* Second Background SVG */}
+                        <img src={bg2} className="absolute top-128 h-auto w-full" />
+                    </>
+                )}
 
             </div>
             <Navbar style='floating' isMobile={isMobile} className='z-20' />
@@ -51,7 +60,7 @@ function Home({ isMobile }: { isMobile: boolean }) {
             <Hero isMobile={isMobile} className='z-20' />
             <WorkGallery id='work' isMobile={isMobile} />
             <AboutMe id='aboutme' isMobile={isMobile} />
-        </section>
+        </section >
     )
 }
 

@@ -78,7 +78,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
     return (
         <section className='grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl'>
             <Navbar style="pinned" isMobile={isMobile} />
-            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
+            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24 pt-64`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
                     <p>CYCLO</p>
                     <p>2023 · Case Studies</p>

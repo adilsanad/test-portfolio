@@ -110,7 +110,7 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
             {/*<div className="col-span-12 col-start-3 p-20 pb-12 bg-black/30 rounded-[15px] items-center justify-center flex">
                 <img src={COVER_IMAGE}></img>
             </div>*/}
-            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
+            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24 pt-64`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
                     <p>Pagr</p>
                     <p>2023 · Case Studies</p>
