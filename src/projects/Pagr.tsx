@@ -16,8 +16,9 @@ import Filters from '../assets/images/pagr/filters.png';
 import Profile1 from '../assets/images/pagr/profile1.png';
 import Profile2 from '../assets/images/pagr/profile2.png';
 import Profile3 from '../assets/images/pagr/profile3.png';
-import pfp1 from '../assets/images/cyclo/user1.png';
-import pfp2 from '../assets/images/cyclo/user2.png';
+import pfp1 from '../assets/images/pagr/pfp1.png';
+import pfp2 from '../assets/images/pagr/pfp2.png';
+import pfp3 from '../assets/images/pagr/pfp3.png';
 import PersonaScroll from "./PersonaScroll";
 import { HashLink } from "react-router-hash-link";
 import Marquee from "react-fast-marquee";
@@ -81,7 +82,7 @@ const personaData = [
         occupation: "Entrepreneur",
         location: "Abu Dhabi, UAE",
         description: "Humaid runs a home services startup and is constantly scouting new vendors and partners. He’s tech-savvy and expects polished, trustworthy apps with real-time info and high usability.",
-        profileImage: pfp2,
+        profileImage: pfp3,
         insights: [
             "Switches between Arabic and English depending on use case",
             "Looks for professional, licensed service providers",
