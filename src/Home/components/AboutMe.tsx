@@ -2,6 +2,7 @@ import React from "react";
 import me from '../../assets/images/me.jpg';
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { TypingAnimation } from "../../ui/TypingAnimation";
+import DivAnimation from "../../ui/DivAnimation";
 const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
     const { elementRef, isVisible, animationClasses } = useScrollAnimation({
         threshold: 0.1,
@@ -74,7 +75,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                         <p>I graduated in Computer Science and Engineering from NIT Jalandhar, Punjab. As a product designer with dev chops, I am able to coordinate much more closely between both design and dev teams. </p>
                     </div>
                 </div>
-                <div className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
+                <DivAnimation className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-l from-white/30 to-white/6 -rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     <div className={`${isMobile ? 'p-9 gap-6' : 'px-12 py-9 gap-3 '} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[32px] `}>
                         <div className={`flex ${isMobile ? 'flex-col gap-2' : 'gap-8'}  w-full`}>
                             <h3 className="font-bold text-white max-md:text-xl">Skills</h3>
@@ -94,8 +95,8 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
+                </DivAnimation>
+                <DivAnimation className={`flex hover:rounded-[15px] rounded-[32px] p-[2px] bg-gradient-to-tl from-white/30 to-white/6 rotate-1 hover:rotate-0 active:rotate-0 transition-all duration-500`}>
                     <div className={`${isMobile ? 'p-9 pb-4' : 'px-12 pt-11 pb-5'} flex flex-col bg-[#0e0e0e] w-full h-full rounded-[32px] text-[#A7A7A7]`}>
                         <h3 className="font-bold text-lg text-[#4F78FF]">some stuff I've done</h3>
                         <div className="flex flex-col gap-3">
@@ -121,7 +122,7 @@ const AboutMe = ({ id, isMobile }: { id: string, isMobile: boolean }) => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </DivAnimation>
             </div>
         </section>
     );

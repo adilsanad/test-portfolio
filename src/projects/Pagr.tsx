@@ -104,7 +104,7 @@ const personaData = [
 
 const Pagr = ({ isMobile }: { isMobile: boolean }) => {
     return (
-        <section className={` grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl`}>
+        <section className={` grid grid-cols-8 md:grid-cols-16 gap-y-20 md:gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl`}>
             <Navbar style="pinned" isMobile={isMobile} />
             {/*<div className="col-span-12 col-start-3 p-20 pb-12 bg-black/30 rounded-[15px] items-center justify-center flex">
                 <img src={COVER_IMAGE}></img>
@@ -142,8 +142,8 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
             </DivAnimation>
-            <DivAnimation className="col-span-full mx-6 py-20 rounded-[30px] bg-[#2C2C2C] flex justify-center gap-6 overflow-x-auto custom-scrollbar">
-                <img className="rounded-[71px] w-full max-w-[960px] object-contain shadow-[0_24px_24px_rgba(0,0,0,0.4)]" src={COVER_IMAGE} />
+            <DivAnimation className="col-span-full mx-4 md:mx-6 py-20 max-md:px-4 rounded-[30px] bg-[#2C2C2C] flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+                <img className="md:rounded-[71px] w-full max-w-[960px] object-contain shadow-[0_24px_24px_rgba(0,0,0,0.4)]" src={COVER_IMAGE} />
             </DivAnimation>
             <DivAnimation className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <p>People are often unaware of services and businesses available in their localities, and small businesses have a difficult time making their presence known. Most SME’s rely on word of mouth and advertising to market themselves, which can be a slow and expensive process.
@@ -157,7 +157,7 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
             <DivAnimation className="col-span-full flex flex-col gap-9 bg-[#181821] md:px-25 max-md:pb-0 py-12 max-md:rounded-[15px]">
                 <h1 className="px-7 text-[2em] font-bold text-white/30">design brief</h1>
                 <div className="flex max-md:flex-col gap-12 bg-black/30 rounded-[15px] p-10 md:p-16">
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">01</h2>
                             <HashLink to="#research" smooth className="flex gap-4 cursor-pointer">
@@ -171,8 +171,8 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">We explored and compared multiple competitor products, such as Yelp, Yellow Pages, etc. and found all the current offerings to be unintuitive, dated and missing comprehensive features like social features, navigation integration, etc.</p>
-                    </div>
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    </DivAnimation>
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">02</h2>
                             <HashLink to="#wireframing" smooth className="flex gap-4 cursor-pointer">
@@ -186,8 +186,8 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">Through the invaluable advice provided by our mentors, we designed comprehensive wireframes for the app,  which we turned into Hi-Fi screen through multiple rounds of iteration based on mentor feedback.</p>
-                    </div>
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    </DivAnimation>
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">03</h2>
                             <HashLink to="#finalscreens" smooth className="flex gap-4 cursor-pointer">
@@ -201,7 +201,7 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">After several iterations of design feedback and reworks, the prototype was ready for the final stages of the hackathon.</p>
-                    </div>
+                    </DivAnimation>
                 </div>
             </DivAnimation>
             <DivAnimation id="research" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
@@ -215,13 +215,13 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                 <h1 className="font-bold text-[2em]">Wireframing</h1>
                 <p>Wireframes helped us quickly iterate and establish the app’s core structure. With feedback from our mentors, we finalized the core features, user flows, visual hierarchy, and overall information architecture.</p>
             </DivAnimation>
-            <DivAnimation className="col-span-full mx-6 px-42 rounded-[30px] bg-[#2C2C2C] flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+            <DivAnimation className="col-span-full mx-6 px-4 md:px-42 rounded-[30px] bg-[#2C2C2C] flex justify-center gap-6 overflow-x-auto custom-scrollbar">
                 <img className="w-full" src={WIREFRAMES}></img>
             </DivAnimation>
             <DivAnimation className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
                 <h1 className="font-bold text-[2em]">Styling</h1>
                 <p>The style guidelines were set to reflect a sleek, high-performance, bold and innovative visual identity, appealing to both casual and competitive riders. A user-friendly experience was priority so finally I ended up with a sufficiently high contrast, yet neutral palette.</p>
-                <img src={Branding} className="rounded-[15px] px-8 py-8"></img>
+                <img src={Branding} className="rounded-[15px] px-2 md:px-8 py-8"></img>
             </DivAnimation>
             <DivAnimation className="col-span-full flex flex-col gap-32 md:items-center">
                 {isMobile ?
@@ -269,12 +269,12 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                     </div>
                 </div>
             </DivAnimation>
-            <div id="finalscreens" className="col-span-full flex flex-col ">
-                <div className="relative col-span-full flex flex-col md:justify-center max-md:items-center gap-28 md:py-36 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+            <div id="finalscreens" className="col-span-full grid grid-cols-4 md:grid-cols-16 max-md:gap-y-8 flex-col bg-[#0B0B0B] ">
+                <div className="relative col-span-full flex flex-col md:justify-center max-md:items-center pag-12 md:gap-28 md:py-36 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 md:px-24 max-md:pb-12 max-md:p-10 max-md:bg-black/80 backdrop-blur-3xl rounded-[30px_30px_0px_0px]">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex max-md:flex-col pt-5 md:pt-9 gap-4 md:gap-2 border-t border-white/20">
-                            <h1 className="font-medium leading-12 text-[1.5em] md:text-[2em] min-w-xl pr-8">Home Page, Search & Business Pages</h1>
+                            <h1 className="font-medium leading-8 md:leading-12 text-[1.5em] md:text-[2em] md:min-w-xl pr-8">Home Page, Search & Business Pages</h1>
                             <p className="max-md:text-base">Pagr’s user-centric app streamlines business searches, allowing you to find new and popular establishments with purpose-built features and design choices, delivering a seamless and efficient experience.</p>
                         </div>
                     </div>
@@ -282,14 +282,14 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                         autoFill={true}
                         className="flex overflow-x-auto custom-scrollbar max-md:overflow-hidden z-20"
                     >
-                        <img src={Home1} alt="Home Page 1" className="max-h-256 object-contain mx-3" />
-                        <img src={Home2} alt="Home Page 1" className="max-h-256 object-contain mx-3" />
-                        <img src={Home3} alt="Home Page 1" className="max-h-256 object-contain mx-3" />
-                        <img src={Home4} alt="Home Page 1" className="max-h-256 object-contain mx-3" />
+                        <img src={Home1} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain mx-3" />
+                        <img src={Home2} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain mx-3" />
+                        <img src={Home3} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain mx-3" />
+                        <img src={Home4} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain mx-3" />
                     </Marquee>
                 </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:gap-0 md:py-36  bg-black/30 border border-white/10 custom-scrollbar overflow-hidden">
-                    <div className="flex flex-col w-full h-full justify-between md:py-12 items-end">
+                <div className="relative col-span-full flex max-md:flex-col md:justify-center md:gap-0 md:py-36  bg-black/30 border border-white/10 custom-scrollbar overflow-hidden">
+                    <div className="flex flex-col w-full md:h-full md:justify-between md:py-12 max-md:pb-5 items-end">
                         <div className="flex flex-col gap-3 max-md:py-18 md:px-24 max-md:pb-12 max-md:p-10  max-md:bg-black/80 backdrop-blur-3xl">
                             <h3 className="text-white/40">HiFi Screens</h3>
                             <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -299,33 +299,33 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                                 </p>
                             </div>
                         </div>
-                        <DivAnimation className="mr-12">
-                            <img src={Map3} alt="Home Page 1" className=" max-h-256 object-contain " />
+                        <DivAnimation className="md:mr-12 max-md:items-start flex max-md:w-full">
+                            <img src={Map3} alt="Home Page 1" className="max-h-56 md:max-h-256 object-contain " />
                         </DivAnimation>
                     </div>
-                    <DivAnimation delay={300} className="flex w-full gap-x-5 md:pr-24 custom-scrollbar max-md:overflow-hidden">
-                        <img src={Map1} alt="Home Page 1" className="max-h-256 object-contain" />
-                        <img src={Map2} alt="Home Page 1" className="max-h-256 object-contain" />
+                    <DivAnimation delay={300} className="flex w-full gap-2 md:gap-x-5 md:pr-24 custom-scrollbar max-md:overflow-hidden">
+                        <img src={Map1} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain" />
+                        <img src={Map2} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain" />
                     </DivAnimation>
                 </div>
                 <div className="relative col-span-full flex flex-col md:justify-center max-md:items-center gap-28 md:py-36 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 md:px-24 max-md:pb-12 max-md:p-10 max-md:bg-black/80 backdrop-blur-3xl rounded-[30px_30px_0px_0px]">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex max-md:flex-col pt-5 md:pt-9 gap-4 md:gap-0 border-t border-white/20">
-                            <h1 className="font-medium leading-12 text-[1.5em] md:text-[2em] min-w-lg pr-8">Community Features</h1>
+                            <h1 className="font-medium leading-12 text-[1.5em] md:text-[2em] md:min-w-lg pr-8">Community Features</h1>
                             <p className="max-md:text-base">Feature-rich community spaces were added to the app to help foster user-made communities and allow them to communicate and share in the app.</p>
                         </div>
                     </div>
-                    <div
-                        className="flex ml-24 overflow-x-hidden gap-5 custom-scrollbar max-md:overflow-hidden z-20"
+                    <DivAnimation
+                        className="flex md:ml-24 overflow-x-hidden gap-5 simple-scrollbar max-md:overflow-x-auto z-20"
                     >
-                        <img src={Com1} alt="Home Page 1" className="max-h-256 object-contain" />
-                        <img src={Com2} alt="Home Page 1" className="max-h-256 object-contain" />
-                        <img src={Com3} alt="Home Page 1" className="max-h-256 object-contain" />
-                    </div>
+                        <img src={Com1} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain" />
+                        <img src={Com2} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain" />
+                        <img src={Com3} alt="Home Page 1" className="max-h-128 md:max-h-256 object-contain" />
+                    </DivAnimation>
                 </div>
                 <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
-                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
+                    <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 md:sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Filters</h1>
@@ -334,23 +334,36 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
                                 The filters change dynamically based on the context of the search, allowing for control over budgets, distance, ratings, , cuisine, verification, etc.</p>
                         </div>
                     </div>
-                    <div className="flex flex-col w-full gap-y-4 custom-scrollbar max-md:overflow-hidden">
-                        <img src={Filters} alt="Filters Page" className="max-h-256 object-contain" />
-                    </div>
+                    <DivAnimation className="flex flex-col w-full gap-y-4 custom-scrollbar max-md:overflow-hidden">
+                        <img src={Filters} alt="Filters Page" className="max-h-128 md:max-h-256 object-contain" />
+                    </DivAnimation>
                 </div>
                 <div className="relative col-span-full flex flex-col md:justify-center max-md:items-center gap-24 md:py-36 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 md:px-24 max-md:pb-12 max-md:p-10 max-md:bg-black/80 backdrop-blur-3xl rounded-[30px_30px_0px_0px]">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex max-md:flex-col pt-5 md:pt-9 gap-4 md:gap-0 border-t border-white/20">
-                            <h1 className="font-medium leading-12 text-[1.5em] md:text-[2em] min-w-lg pr-8">Community Features</h1>
+                            <h1 className="font-medium leading-12 text-[1.5em] md:text-[2em] md:min-w-lg pr-8">Community Features</h1>
                             <p className="max-md:text-base">Feature-rich community spaces were added to the app to help foster user-made communities and allow them to communicate and share in the app.</p>
                         </div>
                     </div>
-                    <DivAnimation className="flex flex-wrap justify-center items-start gap-6 z-20">
-                        <img src={Profile1} alt="1" className="w-full max-w-md object-contain" />
-                        <img src={Profile2} alt="2" className=" mt-48 w-full max-w-md object-contain" />
-                        <img src={Profile3} alt="3" className="w-full max-w-md object-contain" />
-                    </DivAnimation>
+                    {!isMobile ? (
+                        <DivAnimation className="flex flex-wrap justify-center items-start gap-6 z-20">
+                            <img src={Profile1} alt="1" className="w-full max-w-md object-contain" />
+
+                            <img src={Profile2} alt="1" className="mt-48 w-full max-w-md object-contain" />
+
+                            <img src={Profile3} alt="1" className="w-full max-w-md object-contain" />
+                        </DivAnimation>
+                    ) : (
+                        <Marquee
+                            autoFill={true}
+                            className="flex md:flex-wrap justify-center items-start z-20"
+                        >
+                            <img src={Profile1} alt="1" className="w-full max-h-128 md:max-w-md object-contain mx-3" />
+                            <img src={Profile2} alt="2" className=" md:mt-48 w-full max-h-128 md:max-w-md object-contain mx-3" />
+                            <img src={Profile3} alt="3" className="w-full max-h-128 md:max-w-md object-contain mx-3" />
+                        </Marquee>
+                    )}
                 </div>
             </div>
         </section>

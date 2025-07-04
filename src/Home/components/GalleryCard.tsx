@@ -52,7 +52,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         >
             <div className={`flex flex-col gap-3 bg-[black]/80 backdrop-blur-sm hover:bg-black w-full h-full rounded-[25px_25px_10px_10px] md:rounded-[32px] cursor-pointer overflow-hidden transition-all`}>
                 {isMobile &&
-                    <div className="flex w-full p-4 pb-0 border border-white/15 bg-white/10 rounded-[25px_25px_0px_0px] shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)]">
+                    <div className={`flex w-full p-4 ${title === 'Pagr' ? '' : 'pb-0'} border border-white/15 bg-white/10 rounded-[25px_25px_0px_0px] shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)]`}>
                         <img
                             src={image}
                             alt={title}
@@ -88,6 +88,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
                                             tag === 'React' ? 'bg-[#FF6246]/10 border-[#FF6246]/30 text-[#FF6246]' :
                                                 tag === 'Shipped' ? 'bg-[#5BFF8C]/10 border-[#5BFF8C]/30 text-[#5BFF8C]' :
                                                     tag === 'Case Study' ? 'bg-[#A55BFF]/10 border-[#A55BFF]/30 text-[#A55BFF]' :
+                                                        tag === 'Hackathon' ? 'bg-[#EFAF39]/10 border-[#EFAF39]/30 text-[#EFAF39]' : 
+                                                            tag === 'Mobile App' ? 'bg-[#398EEF]/20 border-[#398EEF]/30 text-[#398EEF]' :  
                                                         'bg-[#4F78FF]/10 border-[#4F78FF]/30 text-[#4F78FF]'
                                         }`}
 

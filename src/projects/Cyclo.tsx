@@ -15,6 +15,7 @@ import pfp1 from '../assets/images/cyclo/user1.png';
 import pfp2 from '../assets/images/cyclo/user2.png';
 import PersonaScroll from "./PersonaScroll";
 import { HashLink } from "react-router-hash-link";
+import DivAnimation from "../ui/DivAnimation";
 
 const personaData = [
     {
@@ -77,10 +78,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
     return (
         <section className='grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-linear-to-b from-[#151515] to-[#101010] text-[#C1C1C1] font-neulisneue font-light text-base md:text-xl'>
             <Navbar style="pinned" isMobile={isMobile} />
-            {/*<div className="col-span-12 col-start-3 p-20 pb-12 bg-black/30 rounded-[15px] items-center justify-center flex">
-                <img src={COVER_IMAGE}></img>
-            </div>*/}
-            <div className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
+            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24`}>
                 <div className="flex w-full justify-between border-b-2 border-white pb-5 text-white/40">
                     <p>CYCLO</p>
                     <p>2023 · Case Studies</p>
@@ -89,8 +87,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
                         <h1 className="text-[64px] font-black">CYCLO</h1>
                         <div className="flex gap-3">
-                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
-                            <div className="px-3 p-2 md:px-4 md:py-3 rounded-[5px] border border-[#A55BFF]/30 bg-[#A55BFF]/10 text-[#A55BFF]">Case Study</div>
+                            <div className="px-3 p-2 md:px-4 md:py-3 transition-all active:bg-[#4F78FF]/30 rounded-[5px] border border-[#4F78FF]/30 bg-[#4F78FF]/10 text-[#4F78FF]">UX + UI</div>
+                            <div className="px-3 p-2 md:px-4 md:py-3 transition-all active:bg-[#A55BFF]/30 rounded-[5px] border border-[#A55BFF]/30 bg-[#A55BFF]/10 text-[#A55BFF]">Case Study</div>
                         </div>
                     </div>
                     <div className="flex flex-col gap-10 text-[#C1C1C1]">
@@ -102,22 +100,22 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                             </div>
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Tools</h3>
-                                <p>Figma, Miro, <br className="max-md:hidden"/> Adobe CC</p>
+                                <p>Figma, Miro, <br className="max-md:hidden" /> Adobe CC</p>
                             </div>
                             <div className="flex md:flex-col gap-3">
                                 <h3 className="font-bold text-[#4F78FF]">Areas of Study</h3>
-                                <p>Visual Design, IA & Hierarchy, <br className="max-md:hidden"/> User Research</p>
+                                <p>Visual Design, IA & Hierarchy, <br className="max-md:hidden" /> User Research</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
+            </DivAnimation>
+            <DivAnimation className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
                 <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
                 <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />
                 <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE2} />
-            </div>
-            <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
+            </DivAnimation>
+            <DivAnimation className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-14">
                 <p>Cyclo aims to establish an impactful online presence through a straightforward and easy to use webstore experience.
                     <br /><br />The goal was to create a modern user-centric interface that improves the overall shopping journey, focusing on intuitive designs and bold design.
                 </p>
@@ -125,11 +123,11 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <h1 className="font-neuliscursive text-[2em] text-[#6268FF]">Problem</h1>
                     <p>How can we best market a cycling brand while providing customers an intuitive shopping experience?</p>
                 </div>
-            </div>
-            <div className="col-span-full flex flex-col gap-9 bg-[#181821] md:px-25 max-md:pb-0 py-12 max-md:rounded-[15px]">
+            </DivAnimation>
+            <DivAnimation className="col-span-full flex flex-col gap-9 bg-[#181821] md:px-25 max-md:pb-0 py-12 max-md:rounded-[15px]">
                 <h1 className="px-7 text-[2em] font-bold text-white/30">design brief</h1>
                 <div className="flex max-md:flex-col gap-12 bg-black/30 rounded-[15px] p-10 md:p-16">
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">01</h2>
                             <HashLink to="#research" smooth className="flex gap-4 cursor-pointer">
@@ -143,8 +141,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">Research highlighted a strong demand for bike customization options, comprehensive support and service solutions, and flexible payment options.</p>
-                    </div>
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    </DivAnimation>
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">02</h2>
                             <HashLink to="#wireframing" smooth className="flex gap-4 cursor-pointer">
@@ -158,8 +156,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">The wireframes focused on accessibility, intuitive navigation, and simplifying the shopping progression.</p>
-                    </div>
-                    <div className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
+                    </DivAnimation>
+                    <DivAnimation className="flex flex-col gap-6 w-full pb-9 border-b border-white/10">
                         <div className="flex flex-col w-full gap-5 md:gap-8">
                             <h2 className="font-thin text-white/50 text-[2em]">03</h2>
                             <HashLink to="#finalscreens" smooth className="flex gap-4 cursor-pointer">
@@ -173,26 +171,28 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                             </HashLink>
                         </div>
                         <p className="w-full">After several iterations of wireframing, I mocked up the final screens on Figma. More details below!</p>
-                    </div>
+                    </DivAnimation>
                 </div>
-            </div>
-            <div id="research" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
+            </DivAnimation>
+            <DivAnimation id="research" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
                 <h1 className="font-bold text-[2em]">User Profiles</h1>
                 <p>To represent the research I’ve conducted, I created the two following user personas, These user personas highlight the pain points faced by users with other platforms and their desired goals from a competitor.</p>
-            </div>
-            <PersonaScroll isMobile={isMobile} personas={personaData} />
-            <div id="wireframing" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
+            </DivAnimation>
+            <DivAnimation className="col-span-full">
+                <PersonaScroll isMobile={isMobile} personas={personaData} />
+            </DivAnimation>
+            <DivAnimation id="wireframing" className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
                 <h1 className="font-bold text-[2em]">Wireframing</h1>
                 <p>Based off this research and after exploring the current market for a bit, I had a basic idea for the fundamentals of the webstore experience. I started the design process off with the wireframes of the website. </p>
-            </div>
-            <div className="col-span-full md:col-span-12 md:col-start-3 flex p-4 mx-4 md:p-16 py-0 md:py-0 bg-black/30 border border-white/10 rounded-[15px]">
+            </DivAnimation>
+            <DivAnimation className="col-span-full md:col-span-12 md:col-start-3 flex p-4 mx-4 md:p-16 py-0 md:py-0 bg-black/30 border border-white/10 rounded-[15px]">
                 <img className="w-full" src={WIREFRAMES}></img>
-            </div>
-            <div className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
+            </DivAnimation>
+            <DivAnimation className="col-span-full max-md:px-6 md:col-span-10 md:col-start-4 flex flex-col gap-10 pt-20 border-t border-white/10">
                 <h1 className="font-bold text-[2em]">Styling</h1>
                 <p>The style guidelines were set to reflect a sleek, high-performance, bold and innovative visual identity, appealing to both casual and competitive riders. A user-friendly experience was priority so finally I ended up with a sufficiently high contrast, yet neutral palette.</p>
-            </div>
-            <div className="col-span-full flex flex-col gap-32 md:items-center">
+            </DivAnimation>
+            <DivAnimation className="col-span-full flex flex-col gap-32 md:items-center">
                 {isMobile ?
                     <svg viewBox="0 0 440 431" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0H171.372C201.297 0 224.521 26.1098 221.031 55.8307L208.614 161.588C205.065 191.81 179.453 214.591 149.023 214.591H0V0Z" fill="#FFFBF2" />
@@ -232,9 +232,9 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <p className="text-white/40">Red Hat Text</p>
                     </div>
                 </div>
-            </div>
+            </DivAnimation>
             <div id="finalscreens" className="col-span-full flex flex-col ">
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center max-md:items-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
+                <DivAnimation className="relative col-span-full flex max-md:flex-col md:justify-center max-md:items-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 rounded-[30px_30px_0px_0px] custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl rounded-[30px_30px_0px_0px]">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -249,8 +249,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <div className="flex flex-col gap-y-24 custom-scrollbar max-md:overflow-hidden">
                         <img className="w-full" src={LANDING_PAGE} />
                     </div>
-                </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
+                </DivAnimation>
+                <DivAnimation className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -266,23 +266,23 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                     <div className="flex flex-col w-full gap-y-24 custom-scrollbar max-md:overflow-hidden">
                         <img className="w-full" src={PRODUCT_PAGE} />
                     </div>
-                </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
+                </DivAnimation>
+                <DivAnimation className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
                             <h1 className="font-medium text-[1.5em] md:text-[2em]">Category Pages</h1>
                             <p className="max-md:text-base">
                                 The product catalogue was divided widely into three categories: bikes, gear and parts.
-                                <br/><br/>
+                                <br /><br />
                                 Each category had their own subcategories which along with robust filter options allows users to find exactly what they want quickly.</p>
                         </div>
                     </div>
                     <div className="flex flex-col w-full gap-y-24 custom-scrollbar max-md:overflow-hidden">
                         <img className="w-full" src={CATEGORY_PAGE} />
                     </div>
-                </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
+                </DivAnimation>
+                <DivAnimation className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -295,8 +295,8 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={CHECKOUT_PAGE2} />
                         <img className="w-full" src={CHECKOUT_PAGE3} />
                     </div>
-                </div>
-                <div className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
+                </DivAnimation>
+                <DivAnimation className="relative col-span-full flex max-md:flex-col md:justify-center gap-24 md:py-36 md:pl-24 bg-black/30 border border-white/10 custom-scrollbar">
                     <div className="flex flex-col gap-3 max-md:py-18 max-md:pb-12 max-md:p-10 max-w-md md:h-screen -top-8 md:top-32 sticky max-md:bg-black/80 backdrop-blur-3xl">
                         <h3 className="text-white/40">HiFi Screens</h3>
                         <div className="flex flex-col pt-5 md:pt-9 gap-4 md:gap-8 border-t border-white/20">
@@ -308,7 +308,7 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
                         <img className="w-full" src={SUPPORT_PAGE1} />
                         <img className="w-full" src={SUPPORT_PAGE2} />
                     </div>
-                </div>
+                </DivAnimation>
             </div>
         </section>
     )

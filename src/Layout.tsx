@@ -1,11 +1,20 @@
 import Footer from "./common/Footer";
-import pageendmarker from './assets/pageender.svg'
+import { useLocation } from 'react-router-dom'; // or 'next/router' if using Next.js
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+  isHomePage?: boolean;
+  isMobile: boolean;
+}
+
+const Layout = ({ children, isHomePage, isMobile }: LayoutProps) => {
+  const location = useLocation(); // or useRouter() for Next.js
+  const isHome = isHomePage ?? location.pathname === '/';
+  
   return (
-    <div className="grid grid-cols-8 md:grid-cols-16 w-full ">
+    <div className="grid grid-cols-8 md:grid-cols-16 w-full">
       <main className="col-span-full">{children}</main>
-      <div className="col-span-full flex justify-center items-center gap-4 py-32 bg-[#151515]">
+      <div className={`col-span-full flex justify-center items-center gap-4 py-32 ${isHome ? 'bg-[#151515]' : 'bg-[#0B0B0B]'}`}>
         <svg className="hover:rotate-180 active:rotate-60 transition-all" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12.5" cy="12.5" r="8" fill="#4F78FF" />
         </svg>
@@ -16,7 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <path d="M7.27767 21.2498C5.78093 21.2498 4.81455 19.666 5.49912 18.335L11.2215 7.20902C11.9657 5.76202 14.0343 5.76202 14.7785 7.20903L20.5009 18.335C21.1855 19.666 20.2191 21.2498 18.7223 21.2498H13H7.27767Z" fill="#FF5858" />
         </svg>
       </div>
-      <Footer id='contact' />
+      <Footer isMobile={isMobile} id='contact' />
     </div>
   );
 };

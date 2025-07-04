@@ -10,7 +10,7 @@ const Hero = ({ isMobile, className }: { isMobile: boolean, className?: string }
     const phrases = [
         "front-end dev",
         "creative thinker",
-        "problem solver",
+        "comp-sci grad",
     ];
     return (
         <section
@@ -23,7 +23,7 @@ const Hero = ({ isMobile, className }: { isMobile: boolean, className?: string }
                 <TypingAnimation
                     content={!isMobile ? phrases : [...phrases, "Product Designer"]}
                     className= {isMobile ? "font-medium text-white/90" : " text-white/30"}
-                    typingSpeed={80}
+                    typingSpeed={60}
                     deletingSpeed={40}
                     pauseBeforeDelete={1500}
                     pauseBeforeNext={500}

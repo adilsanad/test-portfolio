@@ -31,7 +31,7 @@ const AppRoutes = () => {
   return (
     <HashRouter basename="/">
       <ScrollToTop />
-      <Layout>
+      <Layout isMobile={isMobile}>
         <Routes>
           <Route path="/" element={<Home isMobile={isMobile} />} />
           <Route path="/cyclo" element={<Cyclo isMobile={isMobile} />} />

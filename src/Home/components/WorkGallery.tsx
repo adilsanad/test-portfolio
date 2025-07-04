@@ -64,18 +64,18 @@ function smoothScrollTo(element: HTMLElement, target: number, duration: number =
 
 function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
   const { elementRef, isVisible, animationClasses } = useScrollAnimation({
-    threshold: 0.2,
+    threshold: 0.07,
     rootMargin: '0px 0px -50px 0px',
     delay: 0,
+    duration: 500,
   });
 
-  const { containerStyle, pulseStyle, PulseKeyframes } = usePulseAnimation({
+  const { containerRef, containerStyle, pulseStyle, PulseKeyframes } = usePulseAnimation({
     pulseColor: '#ff4444',
     pulseDirection: 'right',
     pulseOpacity: 0.7,
     duration: 1000,
     delay: 2000,
-    enabled: isVisible
   });
 
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -115,12 +115,12 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       link: '/cyclo'
     },
     {
-      org: "Pagr",
+      org: "KIOXIA Hackcellence Fest",
       title: "Pagr",
       tags: ["UX + UI", "Mobile App", "Hackathon"],
       year: "2023",
       description:
-        "A project submission for KIOXIA Toshiba’s Hackcellence Fest ‘21 where I worked with my team to design a connected, user-centric Business Directory application for the MEA region.",
+        "A project submission for KIOXIA Toshiba’s Hackcellence Fest where I worked with my team to design a connected, user-centric Business Directory application for the MEA region.",
       image: PagrCover,
       link: '/pagr'
     }
@@ -142,7 +142,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       handleCardClick(activeIndex + 1);
     }
   };
-  
+
   const handleCardClick = (newIndex: number) => {
     if (newIndex !== activeIndex && !isMobile) {
       setIsTransitioning(true);
@@ -204,6 +204,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
         } flex gap-4 absolute z-20`}>
         <PulseKeyframes />
         <div
+          ref={containerRef}
           style={containerStyle}
           className={`relative ${isMobile ? 'order-2' : 'order-1'}`}
         >
@@ -239,30 +240,31 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
         </p>
       </div>
       {/*Nav buttons*/}
-      <div className={`${isMobile ? '-top-16 left-8' : 'top-4 -left-18'
-        } flex flex-col gap-1 absolute z-20`}>
-        <button
-          onClick={navigatePrevious}
-          disabled={activeIndex === 0}
-          className={`group h-fit w-fit p-4 bg-black/60 border-2 border-white/12 rounded-[15px] disabled:opacity-30 hover:bg-black/80 hover:border-white/25 cursor-pointer transition-all disabled:cursor-not-allowed`}
-          aria-label="Previous project"
-        >
-          <svg className="group-hover:opacity-50 opacity-30 transition-all h-6 rotate-270" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 22.5C2.067 22.5 0.5 24.067 0.5 26C0.5 27.933 2.067 29.5 4 29.5L4 22.5ZM52.4749 28.4749C53.8417 27.108 53.8417 24.892 52.4749 23.5251L30.201 1.25126C28.8342 -0.11557 26.6181 -0.11557 25.2513 1.25126C23.8844 2.6181 23.8844 4.83418 25.2513 6.20101L45.0503 26L25.2513 45.799C23.8844 47.1658 23.8844 49.3819 25.2513 50.7487C26.6181 52.1156 28.8342 52.1156 30.201 50.7487L52.4749 28.4749ZM4 29.5L50 29.5L50 22.5L4 22.5L4 29.5Z" fill="white"/>
-          </svg>
-        </button>
-        <button
-          onClick={navigateNext}
-          disabled={activeIndex === galleryCardData.length - 1}
-          className={`group h-fit p-4 bg-black/60 border-2 border-white/12 rounded-[15px] disabled:opacity-30 hover:bg-black/80 hover:border-white/25 cursor-pointer transition-all disabled:cursor-not-allowed`}
-          aria-label="Next project"
-        >
-          <svg className="group-hover:opacity-50 opacity-30 transition-all h-6 rotate-90" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 22.5C2.067 22.5 0.5 24.067 0.5 26C0.5 27.933 2.067 29.5 4 29.5L4 22.5ZM52.4749 28.4749C53.8417 27.108 53.8417 24.892 52.4749 23.5251L30.201 1.25126C28.8342 -0.11557 26.6181 -0.11557 25.2513 1.25126C23.8844 2.6181 23.8844 4.83418 25.2513 6.20101L45.0503 26L25.2513 45.799C23.8844 47.1658 23.8844 49.3819 25.2513 50.7487C26.6181 52.1156 28.8342 52.1156 30.201 50.7487L52.4749 28.4749ZM4 29.5L50 29.5L50 22.5L4 22.5L4 29.5Z" fill="white" />
-          </svg>
-        </button>
-      </div>
-
+      {!isMobile &&
+        <div className={`${isMobile ? '-top-16 left-8' : 'top-4 -left-18'
+          } flex flex-col gap-1 absolute z-20`}>
+          <button
+            onClick={navigatePrevious}
+            disabled={activeIndex === 0}
+            className={`group h-fit w-fit p-4 bg-black/60 border-2 border-white/12 rounded-[15px] disabled:opacity-30 hover:bg-black/80 hover:border-white/25 cursor-pointer transition-all disabled:cursor-not-allowed`}
+            aria-label="Previous project"
+          >
+            <svg className="group-hover:opacity-50 opacity-30 transition-all h-6 rotate-270" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 22.5C2.067 22.5 0.5 24.067 0.5 26C0.5 27.933 2.067 29.5 4 29.5L4 22.5ZM52.4749 28.4749C53.8417 27.108 53.8417 24.892 52.4749 23.5251L30.201 1.25126C28.8342 -0.11557 26.6181 -0.11557 25.2513 1.25126C23.8844 2.6181 23.8844 4.83418 25.2513 6.20101L45.0503 26L25.2513 45.799C23.8844 47.1658 23.8844 49.3819 25.2513 50.7487C26.6181 52.1156 28.8342 52.1156 30.201 50.7487L52.4749 28.4749ZM4 29.5L50 29.5L50 22.5L4 22.5L4 29.5Z" fill="white" />
+            </svg>
+          </button>
+          <button
+            onClick={navigateNext}
+            disabled={activeIndex === galleryCardData.length - 1}
+            className={`group h-fit p-4 bg-black/60 border-2 border-white/12 rounded-[15px] disabled:opacity-30 hover:bg-black/80 hover:border-white/25 cursor-pointer transition-all disabled:cursor-not-allowed`}
+            aria-label="Next project"
+          >
+            <svg className="group-hover:opacity-50 opacity-30 transition-all h-6 rotate-90" viewBox="0 0 54 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 22.5C2.067 22.5 0.5 24.067 0.5 26C0.5 27.933 2.067 29.5 4 29.5L4 22.5ZM52.4749 28.4749C53.8417 27.108 53.8417 24.892 52.4749 23.5251L30.201 1.25126C28.8342 -0.11557 26.6181 -0.11557 25.2513 1.25126C23.8844 2.6181 23.8844 4.83418 25.2513 6.20101L45.0503 26L25.2513 45.799C23.8844 47.1658 23.8844 49.3819 25.2513 50.7487C26.6181 52.1156 28.8342 52.1156 30.201 50.7487L52.4749 28.4749ZM4 29.5L50 29.5L50 22.5L4 22.5L4 29.5Z" fill="white" />
+            </svg>
+          </button>
+        </div>
+      }
 
       {/* Left Column: Gallery Cards */}
       <div className="relative col-span-full md:col-span-5 md:pt-4">

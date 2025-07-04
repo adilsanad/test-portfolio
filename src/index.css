@@ -7,6 +7,32 @@
   .custom-scrollbar::-webkit-scrollbar {
     display: none;
   }
+   @media (max-width: 767px) {
+    .simple-scrollbar::-webkit-scrollbar {
+      height: 2rem;
+    }
+    .simple-scrollbar::-webkit-scrollbar-track {
+      background-color: rgb(15, 15, 15);
+      border-radius: 30px;
+      height: 100%;
+      margin: 1rem;
+    }
+    .simple-scrollbar::-webkit-scrollbar-thumb {
+      width: 24px;
+      height: 100%;
+      background-color: rgb(39, 39, 39);
+      border-radius: 30px;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .simple-scrollbar::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
 }
 
 @theme {

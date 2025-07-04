@@ -109,14 +109,14 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
       {/* Scroll Buttons */}
       <div className="col-span-full md:col-span-3 flex gap-5 py-4 md:py-8 justify-end md:justify-center items-start w-full">
         <button
-          className={`p-4 bg-white/10 rounded-full disabled:opacity-30`}
+          className={`p-4 bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10 rounded-full disabled:opacity-30 transition-all cursor-pointer`}
           onClick={() => scroll("left")}
           disabled={!canScrollLeft}
         >
           <img className="max-md:h-8 rotate-180" src={rtarrow || "/placeholder.svg"} alt="Left" />
         </button>
         <button
-          className={`p-4 bg-white/10 rounded-full disabled:opacity-30`}
+          className={`p-4 bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10 rounded-full disabled:opacity-30 transition-all cursor-pointer disabled:cursor-not-allowed`}
           onClick={() => scroll("right")}
           disabled={!canScrollRight}
         >
