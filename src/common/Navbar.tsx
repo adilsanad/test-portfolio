@@ -108,7 +108,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#work">Work</HashLink>
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#aboutme">{'About (me)'}</HashLink>
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#contact">Contact</HashLink>
-                        <a className={` ${scrolled ? ' bg-black/60 hover:text-white border-black/20' : '' } text-[#4F78FF] font-medium py-4 p-6 hover:bg-white/5 border border-white/0 hover:border-white/10 rounded-[10px] transition-all`} href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
+                        <a className={` ${scrolled ? ' bg-black/60 hover:text-white border-black/20' : '' } text-[#4F78FF] font-medium py-4 p-6 hover:bg-white/5 border border-white/0 hover:border-white/10 rounded-[10px] transition-all`} href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
                     </div>
                 )}
             </div>
@@ -116,7 +116,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
                 <HashLink smooth to="/#work">Work</HashLink>
                 <HashLink smooth to="/#aboutme">{'About (me)'}</HashLink>
                 <HashLink smooth to="/#contact">Contact</HashLink>
-                <a className="text-[#4F78FF]" href='/public/CV0624profile.pdf' download="AdilSanad_Resume.pdf">Resume</a>
+                <a className="text-[#4F78FF]" href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
             </div>
         </nav>
     );
