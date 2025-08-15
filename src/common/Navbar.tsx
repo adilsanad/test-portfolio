@@ -17,6 +17,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
     const [showHeader, setShowHeader] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
     const [scrolled, setScrolled] = useState(false)
+    const [hasLoaded, setHasLoaded] = useState(false)
 
     const handleClick = () => {
         setIsOpen(!isOpen);
@@ -26,6 +27,13 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
         rootMargin: '0px 0px -50px 0px',
         delay: 300,
     });
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setHasLoaded(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -70,6 +78,12 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile }: Nav
             ${showHeader 
                 ? "translate-y-0 duration-300" 
                 : "-translate-y-full"
+            }
+            
+            transform transition-all duration-500 ease-out
+            ${hasLoaded 
+                ? "opacity-100" 
+                : "opacity-0 -translate-y-6"
             } `}
         >
             <div className={`flex ${style === 'pinned'

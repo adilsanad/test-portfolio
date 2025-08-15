@@ -338,7 +338,8 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
                     : '0ms'
                 }}
               >
-                <div className={`flex ${galleryCardData[activeIndex].title !== 'Pagr' ? 'p-4 border bg-white/10  rounded-[25px_25px_0px_0px]' : 'rounded-[70px]'}  h-fit w-full  border-white/15 shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)] group-hover:shadow-[0px_4px_75px_4px_rgba(255,255,255,0.30)] group-hover:translate-y-2 transition-all duration-400 ease-out`}>
+                <div className={`relative group flex ${galleryCardData[activeIndex].title !== 'Pagr' ? 'p-4 border bg-white/10  rounded-[25px_25px_0px_0px]' : 'rounded-[70px]'}  h-fit w-full  border-white/15 shadow-[0px_4px_60px_0px_rgba(255,255,255,0.20)] group-hover:shadow-[0px_4px_75px_4px_rgba(255,255,255,0.30)] group-hover:translate-y-2 transition-all duration-400 ease-out`}>
+                  <p className="absolute -top-10 left-0 right-0 text-center font-thin text-white/30 group-hover:text-white/60  group-hover:-translate-y-3 transition-all duration-500 tracking-wide">click to see more</p>
                   <img
                     src={card.image}
                     alt={card.title}
