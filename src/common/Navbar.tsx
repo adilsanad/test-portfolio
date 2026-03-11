@@ -86,7 +86,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgCol
                         </div>
                         {/* Mobile menu */}
                         <div className={`absolute top-full left-0 right-0 bg-primary-100 border-b border-neutral-100 px-6 py-6 flex flex-col gap-4 text-lg font-albert text-neutral-900 transition-all duration-200 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-                            <a className="text-primary-500 font-semibold" href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
+                            <a className="text-primary-500 font-semibold" href='/AdilCV2.pdf' target='_blank'>Resume</a>
                             <HashLink smooth to="/#work" onClick={() => setIsOpen(false)}>Work</HashLink>
                             <HashLink smooth to="/#aboutme" onClick={() => setIsOpen(false)}>About (me)</HashLink>
                             <HashLink smooth to="/#contact" onClick={() => setIsOpen(false)}>Reach out</HashLink>
@@ -94,7 +94,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgCol
                     </>
                 ) : (
                     <div className="flex text-lg font-albert items-center gap-8 font-medium text-neutral-900">
-                        <a className='text-primary-500 hover:text-primary-700 transition-colors' href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
+                        <a className='text-primary-500 hover:text-primary-700 transition-colors' href='/AdilCV2.pdf' target='_blank'>Resume</a>
                         <HashLink className='hover:text-primary-500 transition-colors' smooth to="/#work">Work</HashLink>
                         <HashLink className='hover:text-primary-500 transition-colors' smooth to="/#aboutme">About (me)</HashLink>
                         <HashLink className='hover:text-primary-500 transition-colors' smooth to="/#contact">Reach out</HashLink>
@@ -176,7 +176,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgCol
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#work">Work</HashLink>
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#aboutme">{'About (me)'}</HashLink>
                         <HashLink className='py-2 p-4 hover:text-white/100 transition-all' smooth to="/#contact">Contact</HashLink>
-                        <a className={` ${scrolled ? ' bg-black/60 hover:text-white border-black/20' : ''} text-[#4F78FF] font-medium py-4 p-6 hover:bg-white/5 border border-white/0 hover:border-white/10 rounded-[10px] transition-all`} href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
+                        <a className={` ${scrolled ? ' bg-black/60 hover:text-white border-black/20' : ''} text-[#4F78FF] font-medium py-4 p-6 hover:bg-white/5 border border-white/0 hover:border-white/10 rounded-[10px] transition-all`} href='/AdilCV2.pdf' target='_blank'>Resume</a>
                     </div>
                 )}
             </div>
@@ -184,7 +184,7 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgCol
                 <HashLink smooth to="/#work">Work</HashLink>
                 <HashLink smooth to="/#aboutme">{'About (me)'}</HashLink>
                 <HashLink smooth to="/#contact">Contact</HashLink>
-                <a className="text-[#4F78FF]" href='/AdilSanad_CV25.pdf' target='_blank'>Resume</a>
+                <a className="text-[#4F78FF]" href='/AdilCV2.pdf' target='_blank'>Resume</a>
             </div>
         </nav>
     );
