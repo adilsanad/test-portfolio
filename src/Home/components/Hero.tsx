@@ -1,35 +1,58 @@
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { TypingAnimation } from "../../ui/TypingAnimation";
+import me from '/my face.png';
+
+const phrases = [
+    "product designer",
+    "front-end dev",
+    "pixel perfectionist",
+    "maker of things",
+    "ctrl+z enthusiast",
+    "caffeine degenerate",
+    "div whisperer",
+    "will refactor for fun"
+];
 
 const Hero = ({ isMobile, className }: { isMobile: boolean, className?: string }) => {
-    const { elementRef, isVisible, animationClasses } = useScrollAnimation({
+    const { elementRef, animationClasses } = useScrollAnimation({
         threshold: 0.2,
         rootMargin: '0px',
-        delay: 500,
+        delay: 300,
     });
-    const phrases = [
-        "front-end dev",
-        "creative thinker",
-        "comp-sci grad",
-    ];
+
     return (
         <section
             ref={elementRef}
-            className={`${className} ${animationClasses} col-span-full max-md:px-8 md:col-start-2 flex flex-col gap-6 md:gap-5 text-white font-neulisneue py-24 pt-24 md:pt-48 z-20`}
+            className={`${className} ${animationClasses} w-full max-w-screen-2xl mx-auto px-6 md:px-24 py-16 pt-28 md:pt-56`}
         >
-            <p className="text-2xl md:text-4xl">Hi, I'm Adil Sanad.</p>
-            <div className={`flex max-md:flex-col h-max md:gap-6 text-[3.5rem] md:text-[5rem] leading-[3.5rem] tracking-tighter ${isMobile ? "min-h-32" : "text-left"} `}>
-                {!isMobile && <p className="font-light bg-gradient-to-tr from-[#4F78FF] to-[#D1D1D1] to-65% bg-clip-text text-transparent py-3 ">Product <span className="font-black mr-4">Designer</span>·</p>}
-                <TypingAnimation
-                    content={!isMobile ? phrases : ["Product Designer", ...phrases]}
-                    className= {isMobile ? "font-medium text-white/90" : " text-white/30"}
-                    typingSpeed={60}
-                    deletingSpeed={40}
-                    pauseBeforeDelete={1500}
-                    pauseBeforeNext={500}
-                    loop={true}
-                    cursorVisible={isMobile ? false : true}
-                />
+            <div className={`flex ${isMobile ? 'flex-col gap-10' : 'items-end justify-between gap-16'}`}>
+                {/* Left column */}
+                <div className="flex flex-col gap-2">
+                    <h2 className="font-averia text-neutral-500 text-2xl md:text-4xl ">
+                        Hi, I'm Adil Sanad.
+                    </h2>
+                    <h1 className="font-averia-serif font-bold text-neutral-900 text-5xl md:text-[5.5rem] leading-[1.1] min-h-[3.3rem] md:min-h-[6.1rem]">
+                        <TypingAnimation
+                            content={phrases}
+                            typingSpeed={80}
+                            deletingSpeed={40}
+                            pauseBeforeDelete={1500}
+                            pauseBeforeNext={500}
+                            loop={true}
+                            cursorChar="_"
+                            cursorClassName="text-primary-500 font-light ml-1"
+                        />
+                    </h1>
+                </div>
+
+                {/* Right column */}
+                <div className={`flex flex-col items-start gap-5 max-w-[320px]`}>
+                    {/* Profile photo with star mask */}
+                    <img src={me} alt="Adil Sanad" className="shrink-0 w-20 h-20 md:w-24 md:h-24 object-contain" />
+                    <p className="font-albert text-neutral-500 text-sm md:text-lg ">
+                        I'm a Product Designer & front-end dev creating 0 → 1 human-centric solutions focused on innovative & effective user experiences.
+                    </p>
+                </div>
             </div>
         </section>
     );

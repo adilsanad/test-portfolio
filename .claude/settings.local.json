@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_variable_defs",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(npx tsc:*)",
+      "Bash(npx eslint:*)",
+      "mcp__plugin_figma_figma__generate_figma_design",
+      "Bash(start \"\" \"http://localhost:5173/#/creatorain-dashboard?figmacapture=f82faae0-5524-4cf0-a025-e7ec9547a584&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2Ff82faae0-5524-4cf0-a025-e7ec9547a584%2Fsubmit&figmadelay=5000\")",
+      "Bash(start \"\" \"http://localhost:5173/#/creatorain-creator-app?figmacapture=9a075568-60a5-4f65-a7f6-23ce3f5d570e&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F9a075568-60a5-4f65-a7f6-23ce3f5d570e%2Fsubmit&figmadelay=5000\")",
+      "Bash(start \"\" \"http://localhost:5173/#/creatorain-website?figmacapture=b4722fbf-736f-485f-87d4-94c195e1351a&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2Fb4722fbf-736f-485f-87d4-94c195e1351a%2Fsubmit&figmadelay=5000\")",
+      "Bash(start \"\" \"http://localhost:5173/?figmacapture=b9e052eb-0443-4700-a63b-74f9c8fa6ce6&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2Fb9e052eb-0443-4700-a63b-74f9c8fa6ce6%2Fsubmit&figmadelay=7000#/creatorain-dashboard\")",
+      "Bash(start \"\" \"http://localhost:5173/?figmacapture=8820189e-507a-4371-9b78-68b49168ae0b&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2F8820189e-507a-4371-9b78-68b49168ae0b%2Fsubmit&figmadelay=7000#/creatorain-creator-app\")",
+      "Bash(start \"\" \"http://localhost:5173/?figmacapture=ff07a66f-7d08-4c43-b67d-bc2224cea754&figmaendpoint=https%3A%2F%2Fmcp.figma.com%2Fmcp%2Fcapture%2Fff07a66f-7d08-4c43-b67d-bc2224cea754%2Fsubmit&figmadelay=7000#/creatorain-website\")"
+    ]
+  }
+}

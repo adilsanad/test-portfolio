@@ -1,66 +1,20 @@
 import Navbar from '../common/Navbar';
 import Hero from './components/Hero';
 import WorkGallery from './components/WorkGallery';
-import AboutMe from './components/AboutMe';
-import React, { useCallback, useMemo } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
-import { Engine } from 'tsparticles-engine';
-import bg1 from '../assets/images/blue1.png';
-import mobbg1 from '../assets/images/mobblue1.png';
-import bg2 from '../assets/images/blue2.png';
-
+import Footer from '../common/Footer';
 
 function Home({ isMobile }: { isMobile: boolean }) {
-    const options = useMemo(() => ({
-        fullScreen: { enable: false },
-        particles: {
-            number: { value: 30, density: { enable: true, area: 1200 } },
-            size: { value: 2.5 },
-            move: { enable: true, speed: 1 },
-            opacity: { value: 0.3 },
-            links: { enable: false },
-            color: { value: "#4F78FF" },
-        },
-        interactivity: {
-            events: {
-                onHover: { enable: true, mode: "attract" },
-            },
-            modes: {
-                attract: { distance: 300 },
-            },
-        },
-    }), []);
-
-    const particlesInit = useCallback(async (engine: Engine) => {
-        await loadSlim(engine);
-    }, []);
-
     return (
-        <section className='relative grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-[#151515] overflow-hidden'>
-            {/* Background SVGs */}
-            <div className="absolute inset-0 z-10 w-full">
-                {isMobile ? (
-                    <>
-                        <img src={mobbg1} className="absolute top-0  w-full md:h-auto" />
-                    </>
-                ) : (
-                    <>
+        <section className='relative flex flex-col w-full bg-primary-100 overflow-hidden'>
+            {/* Decorative background stars */}
+            <img src="/topleftstar.svg" alt="" className="absolute top-0 left-0 w-[600px] md:w-[900px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 animate-[spin_200s_linear_infinite]" />
+            <img src="/rightstar.png" alt="" className="absolute top-[50vh] -right-4 md:right-[60px] w-[200px] md:w-[320px] pointer-events-none z-0" />
 
-                        {/* First Background SVG */}
-                        <img src={bg1} className="absolute top-0  w-full md:h-auto" />
-                        {/* Second Background SVG */}
-                        <img src={bg2} className="absolute top-128 h-auto w-full" />
-                    </>
-                )}
-
-            </div>
-            <Navbar style='floating' isMobile={isMobile} className='z-20' />
-            <Particles className="absolute inset-0 z-0" init={particlesInit} options={options} />
-            <Hero isMobile={isMobile} className='z-20' />
+            <Navbar style='pinned' isMobile={isMobile} theme='light' bgColor='bg-transparent' scrolledBgColor='bg-primary-100/50 backdrop-blur-md' className='z-20' />
+            <Hero isMobile={isMobile} className='z-10' />
             <WorkGallery id='work' isMobile={isMobile} />
-            <AboutMe id='aboutme' isMobile={isMobile} />
-        </section >
+            <Footer isMobile={isMobile} id='contact' theme='light' />
+        </section>
     )
 }
 
