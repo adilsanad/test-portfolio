@@ -39,6 +39,21 @@
   --font-neulissans: "Neulis Sans", "sans-serif";
   --font-neulisneue: "Neulis Neue", "sans-serif";
   --font-neuliscursive: "Neulis Cursive", "sans-serif";
+  --font-averia: "Averia Libre", cursive;
+  --font-averia-serif: "Averia Serif Libre", serif;
+  --font-albert: "Albert Sans", sans-serif;
+
+  --color-primary-100: #fcf9f8;
+  --color-primary-200: #fbefe7;
+  --color-primary-300: #f0c4a8;
+  --color-primary-500: #f08542;
+  --color-primary-700: #913c08;
+
+  --color-neutral-100: #e2e1e0;
+  --color-neutral-500: #8d8581;
+  --color-neutral-900: #4d4541;
+
+  --color-accent: #429ff0;
 }
 
 @font-face {

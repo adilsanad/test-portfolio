@@ -18,9 +18,11 @@ interface PersonaData {
 interface PersonaScrollProps {
   isMobile: boolean
   personas: PersonaData[]
+  theme?: 'light' | 'dark'
 }
 
-const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
+const PersonaScroll = ({ isMobile, personas, theme = 'dark' }: PersonaScrollProps) => {
+  const isLight = theme === 'light';
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
@@ -109,18 +111,18 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
       {/* Scroll Buttons */}
       <div className="col-span-full md:col-span-3 flex gap-5 py-4 md:py-8 justify-end md:justify-center items-start w-full">
         <button
-          className={`p-4 bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10 rounded-full disabled:opacity-30 transition-all cursor-pointer`}
+          className={`p-4 ${isLight ? 'bg-neutral-900/5 border-neutral-100 hover:bg-neutral-900/10 hover:border-neutral-200' : 'bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10'} rounded-full disabled:opacity-30 transition-all cursor-pointer`}
           onClick={() => scroll("left")}
           disabled={!canScrollLeft}
         >
-          <img className="max-md:h-8 rotate-180" src={rtarrow || "/placeholder.svg"} alt="Left" />
+          <img className={`max-md:h-8 rotate-180 ${isLight ? 'invert' : ''}`} src={rtarrow || "/placeholder.svg"} alt="Left" />
         </button>
         <button
-          className={`p-4 bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10 rounded-full disabled:opacity-30 transition-all cursor-pointer disabled:cursor-not-allowed`}
+          className={`p-4 ${isLight ? 'bg-neutral-900/5 border-neutral-100 hover:bg-neutral-900/10 hover:border-neutral-200' : 'bg-white/10 hover:bg-white/25 hover:border-white/25 border-white/10'} rounded-full disabled:opacity-30 transition-all cursor-pointer disabled:cursor-not-allowed`}
           onClick={() => scroll("right")}
           disabled={!canScrollRight}
         >
-          <img className="max-md:h-8" src={rtarrow || "/placeholder.svg"} alt="Right" />
+          <img className={`max-md:h-8 ${isLight ? 'invert' : ''}`} src={rtarrow || "/placeholder.svg"} alt="Right" />
         </button>
       </div>
 
@@ -137,24 +139,24 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
             }`}
           >
             {/* Profile Header */}
-            <div className="flex flex-col items-center justify-between p-5 md:p-8 gap-4 md:gap-8 w-full bg-black/30 rounded-[15px] border border-white/20">
+            <div className={`flex flex-col items-center justify-between p-5 md:p-8 gap-4 md:gap-8 w-full ${isLight ? 'bg-white border-neutral-100' : 'bg-black/30 border-white/20'} rounded-[15px] border`}>
               <div className="flex w-full h-min items-center gap-4 md:gap-6">
                 <img className="flex h-20 w-auto" src={persona.profileImage || "/placeholder.svg"} alt="Profile" />
                 <div className="flex flex-col w-fit gap-0 md:gap-1">
-                  <h1 className="text-2xl md:text-3xl font-bold flex text-white">{persona.name}</h1>
-                  <p className="flex w-fit font-normal text-sm md:text-lg text-wrap text-[#9D9D9D]">
+                  <h1 className={`text-2xl md:text-3xl font-bold flex ${isLight ? 'text-neutral-900' : 'text-white'}`}>{persona.name}</h1>
+                  <p className={`flex w-fit font-normal text-sm md:text-lg text-wrap ${isLight ? 'text-neutral-500' : 'text-[#9D9D9D]'}`}>
                     Aged {persona.age}  · {persona.occupation}  {persona.location}
                   </p>
                 </div>
               </div>
-              <p className="flex w-full max-md:text-base font- text-[#9D9D9D]">{persona.description}</p>
+              <p className={`flex w-full max-md:text-base font- ${isLight ? 'text-neutral-500' : 'text-[#9D9D9D]'}`}>{persona.description}</p>
             </div>
 
             {/* Insights, Pain Points, and Goals */}
-            <div className="flex flex-col w-full rounded-[15px] border border-white/20 overflow-hidden">
-              <div className="flex flex-col gap-4 max-md:px-6 p-10 w-full bg-black/30">
+            <div className={`flex flex-col w-full rounded-[15px] border ${isLight ? 'border-neutral-100' : 'border-white/20'} overflow-hidden`}>
+              <div className={`flex flex-col gap-4 max-md:px-6 p-10 w-full ${isLight ? 'bg-white' : 'bg-black/30'}`}>
                 <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Insights</h3>
-                <ul className="list-disc pl-4 md:pl-8 max-md:text-base text-[#9D9D9D]">
+                <ul className={`list-disc pl-4 md:pl-8 max-md:text-base ${isLight ? 'text-neutral-500' : 'text-[#9D9D9D]'}`}>
                   {persona.insights.map((insight, idx) => (
                     <li key={idx}>{insight}</li>
                   ))}
@@ -165,7 +167,7 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 {/* Pain Points */}
                 <div className="flex flex-col md:gap-4">
                   <div
-                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10 md:cursor-default cursor-pointer"
+                    className={`flex justify-between max-md:p-8 max-md:border-t max-md:border-b ${isLight ? 'border-neutral-100' : 'border-white/10'} md:cursor-default cursor-pointer`}
                     onClick={() => isMobile && toggleSection("painPoints")}
                   >
                     <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Pain Points</h3>
@@ -179,18 +181,18 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                     >
                       <path
                         d="M17 14C17 12.8954 16.1046 12 15 12C13.8954 12 13 12.8954 13 14L17 14ZM13.5858 16.4142C14.3668 17.1953 15.6332 17.1953 16.4142 16.4142L29.1421 3.68629C29.9232 2.90524 29.9232 1.63891 29.1421 0.857864C28.3611 0.0768152 27.0948 0.0768153 26.3137 0.857864L15 12.1716L3.68629 0.857865C2.90524 0.0768163 1.63891 0.0768164 0.857864 0.857865C0.0768153 1.63891 0.0768153 2.90524 0.857864 3.68629L13.5858 16.4142ZM13 14L13 15L17 15L17 14L13 14Z"
-                        fill="white"
+                        fill={isLight ? "#4d4541" : "white"}
                         fillOpacity="0.3"
                       />
                     </svg>
                   </div>
                   <ul
-                    className={`${isMobile ? (expandedSections.painPoints ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0") : "max-h-none"} flex flex-col gap-[1px] md:gap-4 md:list-disc md:pl-8 max-md:text-base text-[#CBCBCB]/80 overflow-hidden transition-all ease-out duration-200`}
+                    className={`${isMobile ? (expandedSections.painPoints ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0") : "max-h-none"} flex flex-col gap-[1px] md:gap-4 md:list-disc md:pl-8 max-md:text-base ${isLight ? 'text-neutral-500' : 'text-[#CBCBCB]/80'} overflow-hidden transition-all ease-out duration-200`}
                   >
                     {persona.painPoints.map((point, idx) => (
                       <li
                         key={idx}
-                        className={`max-md:bg-black/30 max-md:px-8 max-md:py-5 ${idx === 0 ? "max-md:pt-8" : ""} ${idx === persona.painPoints.length - 1 ? "max-md:pb-8" : ""}`}
+                        className={`${isLight ? 'max-md:bg-primary-200' : 'max-md:bg-black/30'} max-md:px-8 max-md:py-5 ${idx === 0 ? "max-md:pt-8" : ""} ${idx === persona.painPoints.length - 1 ? "max-md:pb-8" : ""}`}
                       >
                         {point}
                       </li>
@@ -201,7 +203,7 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                 {/* Goals */}
                 <div className="flex flex-col md:gap-4">
                   <div
-                    className="flex justify-between max-md:p-8 max-md:border-t max-md:border-b border-white/10 md:cursor-default cursor-pointer"
+                    className={`flex justify-between max-md:p-8 max-md:border-t max-md:border-b ${isLight ? 'border-neutral-100' : 'border-white/10'} md:cursor-default cursor-pointer`}
                     onClick={() => isMobile && toggleSection("goals")}
                   >
                     <h3 className="text-2xl font-bold" style={{ color: persona.bgColor }}>Goals</h3>
@@ -215,18 +217,18 @@ const PersonaScroll = ({ isMobile, personas }: PersonaScrollProps) => {
                     >
                       <path
                         d="M17 14C17 12.8954 16.1046 12 15 12C13.8954 12 13 12.8954 13 14L17 14ZM13.5858 16.4142C14.3668 17.1953 15.6332 17.1953 16.4142 16.4142L29.1421 3.68629C29.9232 2.90524 29.9232 1.63891 29.1421 0.857864C28.3611 0.0768152 27.0948 0.0768153 26.3137 0.857864L15 12.1716L3.68629 0.857865C2.90524 0.0768163 1.63891 0.0768164 0.857864 0.857865C0.0768153 1.63891 0.0768153 2.90524 0.857864 3.68629L13.5858 16.4142ZM13 14L13 15L17 15L17 14L13 14Z"
-                        fill="white"
+                        fill={isLight ? "#4d4541" : "white"}
                         fillOpacity="0.3"
                       />
                     </svg>
                   </div>
                   <ul
-                    className={`${isMobile ? (expandedSections.goals ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0") : "max-h-none"} flex flex-col gap-[1px] md:gap-4 md:list-disc md:pl-8 max-md:text-base text-[#CBCBCB]/80 overflow-hidden transition-all ease-out duration-200`}
+                    className={`${isMobile ? (expandedSections.goals ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0") : "max-h-none"} flex flex-col gap-[1px] md:gap-4 md:list-disc md:pl-8 max-md:text-base ${isLight ? 'text-neutral-500' : 'text-[#CBCBCB]/80'} overflow-hidden transition-all ease-out duration-200`}
                   >
                     {persona.goals.map((goal, idx) => (
                       <li
                         key={idx}
-                        className={`max-md:bg-black/30 max-md:px-8 max-md:py-5 ${idx === 0 ? "max-md:pt-8" : ""} ${idx === persona.goals.length - 1 ? "max-md:pb-8" : ""}`}
+                        className={`${isLight ? 'max-md:bg-primary-200' : 'max-md:bg-black/30'} max-md:px-8 max-md:py-5 ${idx === 0 ? "max-md:pt-8" : ""} ${idx === persona.goals.length - 1 ? "max-md:pb-8" : ""}`}
                       >
                         {goal}
                       </li>

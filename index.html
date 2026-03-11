@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="src/assets/aslogo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
     <title>Adil Sanad | Portfolio</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+    <script>
+      // HashRouter compatibility: read figma capture params from query string
+      var urlParams = new URLSearchParams(window.location.search);
+      var captureId = urlParams.get('figmacapture');
+      var endpoint = urlParams.get('figmaendpoint');
+      var delay = parseInt(urlParams.get('figmadelay') || '5000');
+      if (captureId && endpoint) {
+        setTimeout(function() {
+          if (window.figma && window.figma.captureForDesign) {
+            window.figma.captureForDesign({ captureId: captureId, endpoint: endpoint, selector: 'body' });
+          }
+        }, delay);
+      }
+    </script>
   </body>
 </html>

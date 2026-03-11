@@ -7,6 +7,9 @@ import { HashRouter, useLocation } from "react-router";
 import AAIWebapp from "./projects/AAIWebapp";
 import AAIWebsite from "./projects/AAIWebsite";
 import Pagr from "./projects/Pagr";
+import CRDashboard from "./projects/CRDashboard";
+import CRWebsite from "./projects/CRWebsite";
+import CRCreatorApp from "./projects/CRCreatorApp";
 import LoadingScreen from "./components/LoadingScreen";
 import { usePreloader } from "./hooks/usePreloader";
 import { AnimatePresence } from "framer-motion";
@@ -58,6 +61,9 @@ const AppRoutes = () => {
               <Route path="/aai-webapp-revamp" element={<AAIWebapp isMobile={isMobile}/>} />
               <Route path="/aai-website-refresh" element={<AAIWebsite isMobile={isMobile}/>}/>
               <Route path="/pagr" element={<Pagr isMobile={isMobile}/>} />
+              <Route path="/creatorain-dashboard" element={<CRDashboard isMobile={isMobile}/>} />
+              <Route path="/creatorain-website" element={<CRWebsite isMobile={isMobile}/>} />
+              <Route path="/creatorain-creator-app" element={<CRCreatorApp isMobile={isMobile}/>} />
             </Routes>
           </Layout>
         </HashRouter>
