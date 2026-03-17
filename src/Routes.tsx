@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Layout from "./Layout";
-import Cyclo from "./projects/Cyclo";
+
 import { useEffect, useState } from "react";
 import { HashRouter, useLocation } from "react-router";
 import AAIWebapp from "./projects/AAIWebapp";
@@ -57,7 +57,7 @@ const AppRoutes = () => {
           <Layout isMobile={isMobile}>
             <Routes>
               <Route path="/" element={<Home isMobile={isMobile} />} />
-              <Route path="/cyclo" element={<Cyclo isMobile={isMobile} />} />
+
               <Route path="/aai-webapp-revamp" element={<AAIWebapp isMobile={isMobile}/>} />
               <Route path="/aai-website-refresh" element={<AAIWebsite isMobile={isMobile}/>}/>
               <Route path="/pagr" element={<Pagr isMobile={isMobile}/>} />
