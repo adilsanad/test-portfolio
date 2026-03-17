@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import GalleryCard from "./GalleryCard";
-import WebsiteRevampCover from '../../assets/images/website/websitecover.png';
-import WebappRevampCover from '../../assets/images/webapp/subscriberhome.png';
-import CycloCover from '../../assets/images/cyclo/cyclocover.png';
+
 import PagrCover from '../../assets/images/pagr/pagrcover.png';
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
@@ -18,6 +16,7 @@ interface GalleryData {
   accentColor: string;
   gradient?: string;
   thumbPadding?: string;
+  objectFit?: string;
   disabled?: boolean;
 }
 
@@ -79,11 +78,12 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       year: "2024",
       description:
         "A brand new marketing site revamp, focusing on modern design principles and better performance.",
-      image: WebsiteRevampCover,
+      image: '/aaiwebsitethumb.png',
       link: '/aai-website-refresh',
       livelink: 'https://answersai.com',
-      accentColor: '#fbefe7',
-      thumbPadding: 'p-8  pt-16 pb-0',
+      accentColor: '#E8DEF8',
+      gradient: 'linear-gradient(to bottom, #E6DBFB, #B697EF)',
+      thumbPadding: 'p-8 pt-8 pb-0',
     },
     {
       org: "AnswersAi",
@@ -92,21 +92,12 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       year: "2024-25",
       description:
         "A complete UI & UX overhaul of an AI webapp product, focused on creating a distinct & cohesive visual identity while improving usability and site hierarchy.",
-      image: WebappRevampCover,
+      image: '/aaiweappthumb.png',
       link: '/aai-webapp-revamp',
       livelink: 'https://answersai.com',
-      accentColor: '#ece7fb',
-    },
-    {
-      org: "",
-      title: "Cyclo",
-      tags: ["UX + UI", "Case Study"],
-      year: "2023",
-      description:
-        "A case study I took on to design an online webstore for a premium cycling gear company.",
-      image: CycloCover,
-      link: '/cyclo',
-      accentColor: '#fbe8e7',
+      accentColor: '#D5CCF0',
+      thumbPadding: 'p-8 pt-12 pb-0',
+      gradient: 'linear-gradient(to bottom, #E6DBFB, #B697EF)',
     },
     {
       org: "KIOXIA Hackcellence Fest",
@@ -117,7 +108,10 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
         "A project submission for KIOXIA Toshiba's Hackcellence Fest where I worked with my team to design a connected, user-centric Business Directory application for the MEA region.",
       image: PagrCover,
       link: '/pagr',
-      accentColor: '#e7f0fb',
+      accentColor: '#F8E0DE',
+      gradient: 'linear-gradient(to bottom, #FBDDDB, #EF9797)',
+      objectFit: 'object-contain pt-4',
+      thumbPadding: 'p-8 pb-0',
     }
   ];
 
@@ -166,6 +160,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
                 accentColor={card.accentColor}
                 gradient={card.gradient}
                 thumbPadding={card.thumbPadding}
+                objectFit={card.objectFit}
                 isMobile={isMobile}
                 disabled={card.disabled}
               />
@@ -176,8 +171,8 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
 
       {/* End message */}
       <div className="mt-14 md:mt-20 flex justify-center">
-        <div className="w-full max-w-[560px] py-4 border border-neutral-100 rounded-full text-center">
-          <p className="font-albert text-neutral-500 text-base md:text-lg">that's the end of the line!</p>
+        <div className="w-full max-w-[480px] py-4 border-2 border-[#F0C4A8] bg-[#FBEFE7] rounded-full text-center">
+          <p className="font-albert text-primary-500 text-base md:text-xl">that's the end of the line!</p>
         </div>
       </div>
     </section>

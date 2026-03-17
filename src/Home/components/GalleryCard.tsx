@@ -10,6 +10,7 @@ interface GalleryCardProps {
     accentColor: string;
     gradient?: string;
     thumbPadding?: string;
+    objectFit?: string;
     isMobile: boolean;
     disabled?: boolean;
 }
@@ -24,6 +25,7 @@ const GalleryCard = ({
     accentColor,
     gradient,
     thumbPadding = 'p-12 pb-0',
+    objectFit = 'object-cover',
     isMobile,
     disabled = false,
 }: GalleryCardProps) => {
@@ -36,15 +38,15 @@ const GalleryCard = ({
         >
             {/* Colored thumbnail area */}
             <div
-                className={`relative flex items-end rounded-[12px] aspect-[16/9] ${thumbPadding} overflow-hidden transition-transform duration-300 ${disabled ? '' : 'group-hover:scale-[0.99]'} border-2 border-[#E2E1E0]`}
+                className={`relative overflow-hidden flex items-end rounded-[12px] aspect-[16/9] ${thumbPadding} overflow-hidden transition-transform duration-300 ${disabled ? '' : 'group-hover:scale-[0.99]'} border-2 border-[#E2E1E0]`}
                 style={{ background: gradient || accentColor }}
             >
-                <div className={`overflow-hidden ${disabled ? 'transition-all duration-300 group-hover:blur-sm group-hover:scale-105' : ''}`}>
+                <div className={`flex h-full w-full  ${disabled ? 'transition-all duration-300 group-hover:blur-sm group-hover:scale-105' : ''}`}>
                     {image ? (
                         <img
                             src={image}
                             alt={title}
-                            className={`w-full ${isMobile ? 'max-h-[200px]' : ''} object-cover object-bottom ${disabled ? '' : 'group-hover:translate-y-2'} transition-transform duration-300`}
+                            className={`w-full h-full ${isMobile ? 'max-h-[200px]' : ''} ${objectFit} object-top ${disabled ? '' : 'group-hover:translate-y-2'} transition-transform duration-300`}
                         />
                     ) : (
                         <div className={`w-full ${isMobile ? 'h-[200px]' : 'h-[240px]'} flex items-center justify-center bg-neutral-100/30`}>

@@ -7,7 +7,7 @@ function Home({ isMobile }: { isMobile: boolean }) {
     return (
         <section className='relative flex flex-col w-full bg-primary-100 overflow-hidden'>
             {/* Decorative background stars */}
-            <img src="/topleftstar.svg" alt="" className="absolute top-0 left-0 w-[600px] md:w-[900px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 animate-[spin_200s_linear_infinite]" />
+            <img src="/topleftstar.svg" alt="" className="absolute top-0 left-0 w-[600px] md:w-[900px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 animate-[spin_180s_linear_infinite]" />
             <img src="/rightstar.png" alt="" className="absolute top-[50vh] -right-4 md:right-[60px] w-[200px] md:w-[320px] pointer-events-none z-0" />
 
             <Navbar style='pinned' isMobile={isMobile} theme='light' bgColor='bg-transparent' scrolledBgColor='bg-primary-100/50 backdrop-blur-md' className='z-20' />

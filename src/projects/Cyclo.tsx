@@ -1,5 +1,5 @@
 import Navbar from "../common/Navbar";
-import Badge from "../ui/Badge";
+import ProjectHeader from "../ui/ProjectHeader";
 import COVER_IMAGE from '../assets/images/cyclo/cyclocover.png';
 import HERO_IMAGE1 from '../assets/images/cyclo/cyclohero1.png';
 import HERO_IMAGE2 from '../assets/images/cyclo/cyclohero2.png';
@@ -79,38 +79,22 @@ const Cyclo = ({ isMobile }: { isMobile: boolean }) => {
     return (
         <section className='grid grid-cols-8 md:grid-cols-16 gap-y-24 w-full bg-primary-100 text-neutral-500 font-albert font-normal text-base md:text-xl'>
             <Navbar style="pinned" isMobile={isMobile} theme="light" />
-            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24 pt-64`}>
-                <div className="flex w-full justify-between border-b-2 border-neutral-100 pb-5 text-neutral-500">
-                    <p>CYCLO</p>
-                    <p>2023 · Case Studies</p>
-                </div>
-                <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
-                        <h1 className="text-[64px] font-black">CYCLO</h1>
-                        <div className="flex gap-3">
-                            <Badge label="UX + UI" color="orange" />
-                            <Badge label="Case Study" color="brown" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-10 text-neutral-500">
-                        <p>A case study I conducted independently, Cyclo was my attempt at creating an online presence for a physical product-based brand. My goal with this study was to explore design principles, branding and visual design.</p>
-                        <div className="flex max-md:flex-col max-md:gap-5 justify-between">
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Role</h3>
-                                <p>Product Designer</p>
-                            </div>
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Tools</h3>
-                                <p>Figma, Miro, <br className="max-md:hidden" /> Adobe CC</p>
-                            </div>
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Areas of Study</h3>
-                                <p>Visual Design, IA & Hierarchy, <br className="max-md:hidden" /> User Research</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </DivAnimation>
+            <ProjectHeader
+                isMobile={isMobile}
+                org="Cyclo"
+                subtitle="2023 · Case Study"
+                title="Cyclo"
+                badges={[
+                    { label: 'UX + UI', color: 'orange' },
+                    { label: 'Case Study', color: 'brown' },
+                ]}
+                description="A case study I conducted independently, Cyclo was my attempt at creating an online presence for a physical product-based brand. My goal with this study was to explore design principles, branding and visual design."
+                details={[
+                    { label: 'Role', value: 'Product Designer' },
+                    { label: 'Tools', value: <p>Figma, Miro, <br className="max-md:hidden" /> Adobe CC</p> },
+                    { label: 'Areas of Study', value: <p>Visual Design, IA & Hierarchy, <br className="max-md:hidden" /> User Research</p> },
+                ]}
+            />
             <DivAnimation className="col-span-full flex justify-center gap-6 overflow-x-auto custom-scrollbar">
                 <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={HERO_IMAGE1} />
                 <img className="rounded-[15px] w-full max-w-[720px] object-contain" src={COVER_IMAGE} />

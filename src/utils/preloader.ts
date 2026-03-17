@@ -108,23 +108,6 @@ export const preloadAssets = async (
 export const getAllImagePaths = (): string[] => {
   const imagePaths: string[] = [];
   
-  const cycloImages = [
-    '/src/assets/images/cyclo/categorypage.png',
-    '/src/assets/images/cyclo/checkou1.png',
-    '/src/assets/images/cyclo/checkout2.png',
-    '/src/assets/images/cyclo/checkout3.png',
-    '/src/assets/images/cyclo/cyclocover.png',
-    '/src/assets/images/cyclo/cyclohero1.png',
-    '/src/assets/images/cyclo/cyclohero2.png',
-    '/src/assets/images/cyclo/landingpage.png',
-    '/src/assets/images/cyclo/productpage.png',
-    '/src/assets/images/cyclo/support1.png',
-    '/src/assets/images/cyclo/support2.png',
-    '/src/assets/images/cyclo/user1.png',
-    '/src/assets/images/cyclo/user2.png',
-    '/src/assets/images/cyclo/wireframing.png'
-  ];
-
   const pagrImages = [
     '/src/assets/images/pagr/branding.png',
     '/src/assets/images/pagr/community1.png',
@@ -182,7 +165,7 @@ export const getAllImagePaths = (): string[] => {
     '/src/assets/me.png'
   ];
 
-  imagePaths.push(...cycloImages, ...pagrImages, ...webappImages, ...websiteImages, ...generalImages);
+  imagePaths.push(...pagrImages, ...webappImages, ...websiteImages, ...generalImages);
   return imagePaths;
 };
 

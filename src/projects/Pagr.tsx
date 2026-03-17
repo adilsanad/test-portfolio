@@ -1,5 +1,5 @@
 import Navbar from "../common/Navbar";
-import Badge from "../ui/Badge";
+import ProjectHeader from "../ui/ProjectHeader";
 import COVER_IMAGE from '../assets/images/pagr/pagrcover.png';
 import WIREFRAMES from '../assets/images/pagr/pagrwireframes.png';
 import Branding from '../assets/images/pagr/branding.png';
@@ -111,39 +111,23 @@ const Pagr = ({ isMobile }: { isMobile: boolean }) => {
             {/*<div className="col-span-12 col-start-3 p-20 pb-12 bg-black/30 rounded-[15px] items-center justify-center flex">
                 <img src={COVER_IMAGE}></img>
             </div>*/}
-            <DivAnimation className={` ${isMobile ? 'col-span-full px-6' : 'col-span-10 col-start-4 '} flex flex-col w-full gap-24 pt-64`}>
-                <div className="flex w-full justify-between border-b-2 border-neutral-100 pb-5 text-neutral-500">
-                    <p>Pagr</p>
-                    <p>2023 · Case Studies</p>
-                </div>
-                <div className="flex flex-col gap-12">
-                    <div className={`${isMobile ? 'flex-col items-start gap-8' : ''} flex w-full items-center justify-between`}>
-                        <h1 className="text-[64px] font-bold text-neutral-900 font-averia-serif">pagr</h1>
-                        <div className="flex gap-3">
-                            <Badge label="UX + UI" color="orange" />
-                            <Badge label="Mobile App" color="orange" />
-                            <Badge label="Hackathon" color="brown" />
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-10 text-neutral-500">
-                        <p>Pagr was a project submission for KIOXIA Toshiba’s Hackcellence Fest ‘21 where I worked with my team to design a connected, user-centric  Business Directory application, tailored for the Middle-East & Africa market.</p>
-                        <div className="flex max-md:flex-col max-md:gap-5 justify-between">
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Role</h3>
-                                <p>Product Designer</p>
-                            </div>
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Tools</h3>
-                                <p>Figma, Miro, <br className="max-md:hidden" /> Adobe CC</p>
-                            </div>
-                            <div className="flex md:flex-col gap-3">
-                                <h3 className="font-bold text-primary-500">Areas of Study</h3>
-                                <p>Visual Design, Branding, <br className="max-md:hidden" /> User Research, Mobile Design</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </DivAnimation>
+            <ProjectHeader
+                isMobile={isMobile}
+                org="Pagr"
+                subtitle={"2023 \u00b7 Case Study"}
+                title="Pagr"
+                badges={[
+                    { label: "UX + UI", color: "orange" },
+                    { label: "Mobile App", color: "orange" },
+                    { label: "Hackathon", color: "brown" },
+                ]}
+                description={"Pagr was a project submission for KIOXIA Toshiba's Hackcellence Fest '21 where I worked with my team to design a connected, user-centric Business Directory application, tailored for the Middle-East & Africa market."}
+                details={[
+                    { label: "Role", value: "Product Designer" },
+                    { label: "Tools", value: <p>Figma, Miro, <br className="max-md:hidden" /> Adobe CC</p> },
+                    { label: "Areas of Study", value: <p>Visual Design, Branding, <br className="max-md:hidden" /> User Research, Mobile Design</p> },
+                ]}
+            />
             <DivAnimation className="col-span-full mx-4 md:mx-6 py-20 max-md:px-4 rounded-[30px] bg-primary-200 flex justify-center gap-6 overflow-x-auto custom-scrollbar">
                 <img className="md:rounded-[71px] w-full max-w-[960px] object-contain shadow-xl" src={COVER_IMAGE} />
             </DivAnimation>
