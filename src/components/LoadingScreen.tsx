@@ -7,9 +7,9 @@ interface LoadingScreenProps {
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onAnimationComplete }) => {
   return (
-    <motion.div 
+    <motion.div
       className="fixed inset-0 flex items-center justify-center z-50"
-      style={{ backgroundColor: '#101010' }}
+      style={{ backgroundColor: '#fcf9f8' }}
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -17,10 +17,10 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onAnimationComplete }) =>
     >
       <div className="flex flex-col items-center">
         <div className="relative w-16 h-16 mb-4">
-          <div className="absolute inset-0 rounded-full border-4 border-gray-800"></div>
-          <div 
+          <div className="absolute inset-0 rounded-full border-4 border-[#f0c4a8]/30"></div>
+          <div
             className="absolute inset-0 rounded-full border-4 border-transparent border-t-4 animate-spin"
-            style={{ borderTopColor: '#4F78FF' }}
+            style={{ borderTopColor: '#f08542' }}
           ></div>
         </div>
       </div>

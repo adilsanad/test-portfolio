@@ -25,7 +25,7 @@ const GalleryCard = ({
     accentColor,
     gradient,
     thumbPadding = 'p-12 pb-0',
-    objectFit = 'object-cover',
+    objectFit = 'object-contain object-bottom',
     isMobile,
     disabled = false,
 }: GalleryCardProps) => {
@@ -46,7 +46,7 @@ const GalleryCard = ({
                         <img
                             src={image}
                             alt={title}
-                            className={`w-full h-full ${isMobile ? 'max-h-[200px]' : ''} ${objectFit} object-top ${disabled ? '' : 'group-hover:translate-y-2'} transition-transform duration-300`}
+                            className={`w-full h-full ${isMobile ? 'max-h-[200px]' : ''} ${objectFit} ${disabled ? '' : 'group-hover:translate-y-2'} transition-transform duration-300`}
                         />
                     ) : (
                         <div className={`w-full ${isMobile ? 'h-[200px]' : 'h-[240px]'} flex items-center justify-center bg-neutral-100/30`}>
