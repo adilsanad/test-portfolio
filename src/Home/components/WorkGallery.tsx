@@ -69,6 +69,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       accentColor: '#172D4F',
       gradient: 'linear-gradient(to bottom, #172D4F, #3567B5)',
       thumbPadding: 'p-8 pb-0 pr-0',
+      objectFit: 'object-cover',
       disabled: true,
     },
     {
@@ -84,6 +85,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       accentColor: '#E8DEF8',
       gradient: 'linear-gradient(to bottom, #E6DBFB, #B697EF)',
       thumbPadding: 'p-8 pt-8 pb-0',
+      objectFit: 'object-cover object-top',
     },
     {
       org: "AnswersAi",
@@ -97,6 +99,7 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       livelink: 'https://answersai.com',
       accentColor: '#D5CCF0',
       thumbPadding: 'p-8 pt-12 pb-0',
+      objectFit: 'object-cover object-top',
       gradient: 'linear-gradient(to bottom, #E6DBFB, #B697EF)',
     },
     {
@@ -110,8 +113,8 @@ function WorkGallery({ id, isMobile }: { id: string, isMobile: boolean }) {
       link: '/pagr',
       accentColor: '#F8E0DE',
       gradient: 'linear-gradient(to bottom, #FBDDDB, #EF9797)',
-      objectFit: 'object-contain pt-4',
-      thumbPadding: 'p-8 pb-0',
+      objectFit: 'object-contain',
+      thumbPadding: 'p-8 pb-4',
     }
   ];
 
