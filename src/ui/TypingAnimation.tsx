@@ -271,12 +271,12 @@ export function TypingAnimation({
 
     return (
         <span ref={elementRef} className={`flex justify-between`}>
-            <div className={`flex items-center ${className}`}>
+            <span className={className}>
                 {displayContent}
-                {showCursor && !isComplete && (
-                    <span className={cursorClassName}>{cursorChar}</span>
+                {!isComplete && (
+                    <span className={`${cursorClassName} ${showCursor ? 'visible' : 'invisible'}`}>{cursorChar}</span>
                 )}
-            </div>
+            </span>
             <span className={`${className} opacity-0`}> </span>
         </span>
     );

@@ -12,9 +12,10 @@ interface NavbarProps {
     isMobile: boolean;
     bgColor?: string;
     scrolledBgColor?: string;
+    mobileMenuBgColor?: string;
 };
 
-function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgColor = 'bg-primary-100', scrolledBgColor = 'bg-primary-100/50 backdrop-blur-md' }: NavbarProps) {
+function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgColor = 'bg-primary-100', scrolledBgColor = 'bg-primary-100/50 backdrop-blur-md', mobileMenuBgColor = 'bg-primary-100' }: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [showHeader, setShowHeader] = useState(true)
     const [lastScrollY, setLastScrollY] = useState(0)
@@ -62,9 +63,9 @@ function Navbar({ theme = 'dark', style = 'floating', className, isMobile, bgCol
             <nav
                 ref={elementRef}
                 className={`w-full flex items-center justify-between px-6 font-albert z-50 transition-all ${className}
-                    ${showHeader ? "translate-y-0 duration-300" : "-translate-y-full"}
+                    ${showHeader || isOpen ? "translate-y-0 duration-300" : "-translate-y-full"}
                     ${hasLoaded ? "opacity-100" : "opacity-0 -translate-y-6"}
-                    ${scrolled ? `${scrolledBgColor} shadow-sm py-5 md:py-6 md:px-16` : `${bgColor} py-5 md:py-8 md:px-24`}
+                    ${scrolled ? `${scrolledBgColor} shadow-sm py-5 md:py-6 md:px-16` : `${isMobile && isOpen ? mobileMenuBgColor : bgColor} py-5 md:py-8 md:px-24`}
                     fixed top-0 left-0 right-0
                 `}
             >

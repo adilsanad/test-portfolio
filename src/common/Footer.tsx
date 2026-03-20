@@ -20,9 +20,9 @@ const Footer = ({ id, isMobile, theme = 'dark' }: FooterProps) => {
 
     if (theme === 'light') {
         return (
-            <footer id={id} className={`w-full border-t border-neutral-100 px-6 md:px-16 py-12 flex ${isMobile ? 'flex-col gap-4' : 'items-center justify-between'} font-albert`}>
+            <footer id={id} className={`w-full border-t border-neutral-100 px-6 md:px-16 py-12 flex ${isMobile ? 'flex-col gap-12' : 'justify-between'} items-center font-albert`}>
                 {/* Social icons */}
-                <div className="flex flex-1 gap-6 items-center">
+                <div className="order-1 flex flex-1 gap-6 items-center">
                     <a href="mailto:adilsanad059@gmail.com" className="text-neutral-900 hover:text-primary-500 transition-colors">
                         <svg className="h-6 fill-current" viewBox="0 0 40 31" xmlns="http://www.w3.org/2000/svg">
                             <path d="M35.8421 8.02209L20.223 17.4339L4.60398 8.02209V4.25738L20.223 13.6691L35.8421 4.25738M35.8421 0.492676H4.60398C2.43684 0.492676 0.699219 2.16797 0.699219 4.25738V26.8456C0.699219 27.8441 1.11061 28.8016 1.8429 29.5077C2.57518 30.2137 3.56837 30.6103 4.60398 30.6103H35.8421C36.8777 30.6103 37.8709 30.2137 38.6032 29.5077C39.3354 28.8016 39.7468 27.8441 39.7468 26.8456V4.25738C39.7468 2.16797 37.9897 0.492676 35.8421 0.492676Z" />
@@ -43,12 +43,12 @@ const Footer = ({ id, isMobile, theme = 'dark' }: FooterProps) => {
                 </div>
 
                 {/* Copyright */}
-                <p className="flex-1 text-center font-albert text-neutral-900/50 ">
+                <p className="order-3 md:order-2 flex-1 text-center font-albert text-neutral-900/50 ">
                     © 2026 adil
                 </p>
 
                 {/* Tagline */}
-                <p className="flex-1 font-averia-serif gap-2 flex justify-end text-right text-xl">
+                <p className="order-2 md:order-3 flex-1 font-averia-serif gap-2 flex justify-end text-right text-xl">
                     <span className="font-averia-serif text-neutral-500"><span className='line-through opacity-60'>made</span> refactored by  </span>
                     <span className="font-averia-serif italic text-primary-500">yours truly</span>
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">

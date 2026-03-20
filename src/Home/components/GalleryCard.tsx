@@ -64,16 +64,16 @@ const GalleryCard = ({
             </div>
 
             {/* Card info */}
-            <div className="flex flex-col gap-2 p-4">
-                <div className="flex items-baseline justify-between">
-                    <h3 className="font-averia-serif font-semibold text-neutral-900 text-2xl">
+            <div className="flex flex-col gap-4 md:gap-2 p-4">
+                <div className="flex flex-col md:flex-row max-md:gap-2 items-baseline justify-between">
+                    <h3 className="font-averia-serif font-semibold text-neutral-900  text-xl md:text-2xl">
                         {title}
                     </h3>
-                    <span className="font-albert font-medium text-neutral-500 text-lg">
+                    <span className="font-albert font-medium text-neutral-500 text-base md:text-lg">
                         {org}{org && ' · '}{year}
                     </span>
                 </div>
-                <p className="font-albert text-neutral-500 leading-relaxed text-lg">
+                <p className="font-albert text-neutral-500 leading-relaxed text-base md:text-lg">
                     {description}
                 </p>
             </div>

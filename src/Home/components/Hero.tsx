@@ -8,7 +8,7 @@ const phrases = [
     "pixel perfectionist",
     "maker of things",
     "ctrl+z enthusiast",
-    "caffeine degenerate",
+    "caffeine cultivator",
     "div whisperer",
     "will refactor for fun"
 ];
@@ -31,7 +31,7 @@ const Hero = ({ isMobile, className }: { isMobile: boolean, className?: string }
                     <h2 className="font-averia text-neutral-500 text-2xl md:text-4xl ">
                         Hi, I'm Adil Sanad.
                     </h2>
-                    <h1 className="font-averia-serif font-bold text-neutral-900 text-5xl md:text-[5.5rem] leading-[1.1] min-h-[3.3rem] md:min-h-[6.1rem]">
+                    <h1 className="font-averia-serif font-bold text-neutral-900 text-[2.8rem] md:text-[5.5rem] leading-[1.1] min-h-[6.25rem] md:min-h-[6.1rem]">
                         <TypingAnimation
                             content={phrases}
                             typingSpeed={80}
@@ -49,8 +49,8 @@ const Hero = ({ isMobile, className }: { isMobile: boolean, className?: string }
                 <div className={`flex flex-col items-start gap-5 max-w-[320px]`}>
                     {/* Profile photo with star mask */}
                     <img src={me} alt="Adil Sanad" className="shrink-0 w-20 h-20 md:w-24 md:h-24 object-contain" />
-                    <p className="font-albert text-neutral-500 text-sm md:text-lg ">
-                        I'm a Product Designer & front-end dev creating 0 → 1 human-centric solutions focused on innovative & effective user experiences.
+                    <p className="font-albert text-neutral-500 md:text-lg ">
+                        Product Designer who codes. I design and ship user-facing products end-to-end — from research to React.
                     </p>
                 </div>
             </div>
